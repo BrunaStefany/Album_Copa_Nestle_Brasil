@@ -73,7 +73,6 @@ O foco principal do desenvolvimento foi a construção de um back-end robusto e 
 3. Configure as variáveis de ambiente (Crie um arquivo `.env` baseado no `.env.example`).
 4. Inicie o servidor:
    `[comando para rodar, ex: npm start ou uvicorn main:app --reload]`
-   <img width="1432" height="934" alt="image" src="https://github.com/user-attachments/assets/29a9bf06-6a79-48bc-a075-1b6056343047" />
 
 
 ---
