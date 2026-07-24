@@ -1,0 +1,212 @@
+### 1. Testar o Ranking de Usuários (Deve retornar o top 15)
+GET http://localhost:3000/api/ranking/usuarios
+Content-Type: application/json
+
+###
+
+### 2. Testar o Ranking de Fábricas
+GET http://localhost:3000/api/ranking/fabricas
+Content-Type: application/json
+
+###
+
+### 3. Testar as Missões (Deve retornar as missões que estão no banco)
+GET http://localhost:3000/api/missoes
+Content-Type: application/json
+
+### 
+
+### 4. Testar o Cadastro de Usuário
+POST http://localhost:3000/api/auth/cadastro
+Content-Type: application/json
+
+{
+    "Nome": "Usuario Teste API",
+    "Email": "teste.api@nestle.com",
+    "Senha": "123",
+    "Local_ID": 1,
+    "Cargo": "Desenvolvedor"
+}
+
+###
+
+### 5. Testar o Login do Usuário
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+    "Email": "teste.api@nestle.com",
+    "Senha_Hash": "123"
+}
+
+###
+
+### 6. Salvar Progresso (AGORA NA ROTA /usuarios)
+POST http://localhost:3000/api/usuarios/progresso
+Content-Type: application/json
+
+{
+  "Email": "teste.api@nestle.com",
+  "Moedas": 500,
+  "stickers": [1, 1, 2, 5, 10]
+}
+
+###
+
+### 7. Testar o "Tinder das Figurinhas" (Sugerir Trocas)
+GET http://localhost:3000/api/trade/sugestoes/teste.api@nestle.com
+Content-Type: application/json
+
+### Testar Busca de Notificações
+GET http://localhost:3000/api/notificacoes/teste2@gmail.com
+
+### Teste Bala Traçante
+GET http://localhost:3000/api/gemini/teste2@gmail.com
+
+
+### =====================================
+### TESTES DA LOJA E ÁLBUM
+### =====================================
+
+### 1. Testar Compra de Pacote (Descontar 50 moedas)
+# ⚠️ Atenção: Se o teste2 não tiver 50 moedas, ele vai (e deve) dar Erro 400: Saldo Insuficiente!
+POST http://localhost:3000/api/loja/comprar
+Content-Type: application/json
+
+{
+    "email": "teste2@gmail.com",
+    "preco": 50
+}
+
+
+### 2. Testar Salvar Figurinhas (O pacote abriu e vieram as cartas 1, 5 e 1)
+# Coloquei o ID 1 repetido de propósito para testar se ele soma +1 na "Quantidade" no banco!
+POST http://localhost:3000/api/loja/salvar-figurinhas
+Content-Type: application/json
+
+{
+    "email": "teste2@gmail.com",
+    "figurinhasIds": [1, 5, 1]
+}
+
+
+### 3. Testar Buscar Álbum (O F5 do Front-end)
+# Tem que retornar a lista com a figurinha 1 (Quantidade: 2) e a figurinha 5 (Quantidade: 1)
+GET http://localhost:3000/api/loja/album/teste2@gmail.com
+
+
+#### Testar Envio de Troca (O Carteiro)
+POST http://localhost:3000/api/trade/enviar
+Content-Type: application/json
+
+{
+    "remetenteEmail": "teste2@gmail.com",
+    "remetenteNome": "Teste Final",
+    "destinatarioEmail": "admin@company.com",
+    "cartasPedidas": [10, 15, 2]
+}
+
+
+
+
+### Testar Envio de Troca (O Carteiro invertido)
+POST http://localhost:3000/api/trade/enviar
+Content-Type: application/json
+
+{
+    "remetenteEmail": "admin@company.com",
+    "remetenteNome": "Admin Chefão",
+    "destinatarioEmail": "teste2@gmail.com",
+    "cartasPedidas": [1]
+}
+
+### Testar o Tinder do Admin (Quem tem carta pro Admin?)
+GET http://localhost:3000/api/trade/sugestoes/admin@company.com
+
+### Testar o Tinder do Teste2 (Quem tem carta pro Teste2?)
+GET http://localhost:3000/api/trade/sugestoes/teste2@gmail.com
+
+
+
+//////////////##ultimos testes##////////
+
+
+### Testar Resposta de Troca (O "Sim" ou "Não")
+# Pegue um ID de notificação que exista na sua tabela Notificacoes
+POST http://localhost:3000/api/trade/responder
+Content-Type: application/json
+
+{
+    "notificacaoId": 1, 
+    "acao": "aprovado"
+
+
+}
+
+
+### Testar Envio de Troca JUSTA 1x1 (O Carteiro)
+POST http://localhost:3000/api/trade/enviar
+Content-Type: application/json
+
+{
+    "remetenteEmail": "admin@company.com",
+    "remetenteNome": "Admin Chefão",
+    "destinatarioEmail": "teste2@gmail.com",
+    "cartaPedida": 10,
+    "cartaOferecida": 49
+}
+
+
+### Testar Resposta da Troca (Aprovar e Transferir as Cartas 1x1)
+POST http://localhost:3000/api/trade/responder
+Content-Type: application/json
+
+{
+    "notificacaoId": "10", 
+    "acao": "aprovado"
+}
+
+### Injetar Carta Rara Repetida na Bruna (Modo Deus)
+POST http://localhost:3000/api/loja/salvar-figurinhas
+Content-Type: application/json
+
+{
+    "email": "teste4@gmail.com",
+    "figurinhasIds": [2, 2]
+}
+
+
+### 1. Testar Login e Evolução de Sequência
+// Este comando simula o login normal. 
+// Se você alterou a data no SQL para ontem, a resposta deve mostrar Sequencia_Dias + 1.
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+    "Email": "admin@company.com", 
+    "Senha_Hash": "123"
+}
+
+### 2. Injetar Sequência e Moedas (Modo Desenvolvedor)
+// Use este comando se quiser forçar um estado específico no banco via API, 
+// assumindo que sua rota de progresso aceita estes campos.
+POST http://localhost:3000/api/usuarios/progresso
+Content-Type: application/json
+
+{
+    "Email": "admin@company.com",
+    "Moedas": 2400,
+    "Sequencia_Dias": 4,
+    "stickers": [1, 2, 3]
+}
+
+### 3. Validar Resgate de Bônus (O "Pulo do Gato")
+// Após rodar o teste acima (que deixa você com 4 dias), rode o login novamente.
+// O servidor deve retornar "ganhouBonusHoje": true e Saldo_Moedas: 2500.
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+    "Email": "admin@company.com", 
+    "Senha_Hash": "123"
+}

@@ -1,0 +1,772 @@
+
+:root {
+    --primary: #00447C;
+    --primary-light: #1A5C96;
+    --dark-bg: #112943;
+}
+
+/* ---------------- GLASS & BASE ---------------- */
+.glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+body {
+    background-color: var(--dark-bg);
+    overflow-x: hidden;
+}
+
+/* ---------------- CONTAINER DO ÁLBUM (LIVRO ABERTO REAL) ---------------- */
+
+#album-pages-container {
+    display: flex !important;
+    justify-content: center;
+    align-items: stretch;
+    gap: 0 !important; 
+    padding: 0 !important;
+    border: none !important;
+    background: #112943; /* Cor escura para caso algo falhe, não ser branco */
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+    position: relative;
+    max-width: 1000px;
+    margin: 20px auto;
+    overflow: hidden; /* Corta o excesso da sobreposição */
+}
+
+/* O VINCO (A LINHA DE IMPRESSÃO CENTRAL) */
+
+#album-pages-container::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(
+        to right, 
+        rgba(0,0,0,0.2) 0%, 
+        transparent 50%, 
+        rgba(0,0,0,0.2) 100%
+    );
+    z-index: 40;
+    pointer-events: none;
+    transform: translateX(-50%);
+}
+
+/* ---------------- CONFIGURAÇÃO BASE (COMUM ÀS DUAS) ---------------- */
+
+#album-grid-left, #album-grid-right {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px !important; /* Espaço entre as figurinhas */
+    
+    width: 51% !important; 
+    min-height: 550px;
+    
+    background-color: transparent !important;
+    background-size: cover !important; 
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+
+    image-rendering: -webkit-optimize-contrast !important;
+    image-rendering: crisp-edges !important;
+    transform: translateZ(0);
+    
+    position: relative;
+    z-index: 10;
+    box-sizing: border-box; /* Crucial para o padding não cortar nada */
+}
+
+/* ---------------- PÁGINA ESQUERDA (AJUSTE DE MARGEM) ---------------- */
+#album-grid-left {
+    clip-path: inset(0 -50% 0 0);
+    margin-left: -0.3% !important;
+
+    padding: 130px 40px 90px 80px !important; 
+}
+
+/* ---------------- PÁGINA DIREITA (MANTIDA) ---------------- */
+#album-grid-right {
+    clip-path: inset(0 0 0 -50%);
+    margin-right: -0.3% !important;
+    
+    padding: 130px 80px 90px 40px !important;
+}
+
+/* ---------------- PROTEÇÃO PARA PÁGINA 1 ---------------- */
+
+#album-grid-left.page-1-special {
+    display: block !important;
+    padding: 0 !important; /* Não mexe no posicionamento fixo da figura1 e 2 */
+}
+
+/* ---------------- A LINHA FINA DE COSTURA ---------------- */
+
+#album-grid-left::after {
+    content: "";
+    position: absolute;
+    right: -1px; /* Mantém no centro */
+
+    top: 135px;    
+    bottom: 95px; 
+    
+    width: 1px; 
+    /* Um cinza bem sutil para não brigar com a sombra */
+    background-color: rgba(212, 199, 199, 0.6); 
+    
+    z-index: 60; 
+    pointer-events: none;
+}
+
+.page-dark .album-slot-empty {
+    background-color: transparent !important; /* mantém o fundo da página */
+    border: 1px dashed rgba(212, 199, 199, 0.6) !important; /* borda branca */
+}
+
+.page-dark .album-slot-number {
+    color: rgba(203, 193, 193, 0.15) !important;
+}
+
+.page-dark .album-slot-empty:hover {
+    background-color: #f8fafc !important;
+    border: 1px solid #00447C !important;
+}
+
+.page-dark .album-slot-empty:hover {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid #ffffff !important;
+}
+
+.page-dark .album-slot-empty:hover .album-slot-number {
+    color: #ffffff !important;
+}
+
+/* Ajuste da linha de vinco para não sumir no preto */
+
+.page-dark::after {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* ---------------- SLOTS E FIGURINHAS PADRONIZADOS ---------------- */
+
+.album-slot-empty {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.04); 
+    border: 1px dashed rgba(0, 0, 0, 0.12); 
+    border-radius: 4px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 3 / 4; 
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* PADRONIZAÇÃO DAS FIGURINHAS */
+
+[class^="sticker-"] {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 3 / 4;
+    border-radius: 4px; /* Combinando com o slot */
+    padding: 4px; 
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+[class^="sticker-"]:hover {
+    transform: scale(1.2) translateY(-15px) rotate(-2deg);
+    z-index: 100 !important;
+    filter: brightness(1.1);
+}
+
+/* ---------------- NUMERAÇÃO ---------------- */
+
+.album-slot-number {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 1rem; 
+    color: rgba(0, 0, 0, 0.08); 
+    pointer-events: none;
+}
+
+/* Hover suave para slots pequenos */
+
+.album-slot-empty:hover {
+    background-color: rgba(0, 68, 124, 0.04);
+    /* Escala menor no hover (1.08) para não sobrepor as vizinhas já que estão perto */
+    transform: scale(1.08) translateY(-5px);
+    z-index: 50 !important;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+/* ---------------- FIGURINHAS (AJUSTE FINAL) ---------------- */
+
+[class^="sticker-"] {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 3 / 4;
+    border-radius: 4px;
+    padding: 4px; /* Padding interno mínimo */
+}
+
+[class^="sticker-"] {
+    aspect-ratio: 3 / 4;
+    border-radius: 12px;
+    padding: 10px;
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+[class^="sticker-"]:hover {
+    transform: scale(1.25) translateY(-20px) rotate(-3deg);
+    z-index: 100 !important;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.4), 0 0 30px rgba(255,255,255,0.2);
+    filter: brightness(1.1);
+}
+
+/* RARIDADES */
+
+.sticker-common {
+    background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+    color: #1e293b;
+    border: 1px solid #cbd5e1;
+}
+
+.sticker-rare {
+    background: linear-gradient(135deg, var(--primary), #002E52);
+    color: white;
+    border: 2px solid var(--primary-light);
+}
+
+.sticker-epic {
+    background: linear-gradient(135deg, #a855f7, #7e22ce);
+    color: white;
+    border: 2px solid #c084fc;
+    overflow: hidden;
+}
+
+.sticker-legendary {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: white;
+    border: 2px solid #fcd34d;
+    animation: glow-gold 2s infinite alternate;
+}
+
+/* ---------------- ANIMAÇÕES ---------------- */
+
+@keyframes glow-gold {
+    from { box-shadow: 0 0 10px #f59e0b; }
+    to { box-shadow: 0 0 25px #fcd34d, 0 0 40px rgba(245, 158, 11, 0.4); }
+}
+
+/* ---------------- UI FIXES ---------------- */
+
+/* =======================================================
+   MAPA DE LAYOUTS DO ÁLBUM (PÁGINAS ESPECÍFICAS)
+   ======================================================= */
+
+/* Removemos o grid padrão apenas nas páginas de layout livre (1, 2 e 5) */
+.layout-trofeu, .layout-mascotes, .layout-fabricas {
+    display: block !important; 
+    position: relative !important;
+    padding: 0 !important; /* Zera o espaçamento interno para a imagem não dar zoom */
+}
+
+/* ---------------- LAYOUT 1: TROFÉU (1 Figurinha) ---------------- */
+.layout-trofeu .posicao-1 {
+    position: absolute !important;
+    width: 126px !important;  /* Estava antes com o tamanho 105*/
+    height: 174px !important; /* Estava antes com o tamanho 145*/
+    top: 510px !important;    /* Empurra a figurinha para a parte de baixo */
+    left: 55px !important;    /* Afasta um pouco da borda esquerda */
+}
+
+/* ---------------- LAYOUT 2: MASCOTES (2 Figurinhas) ---------------- */
+.layout-mascotes .posicao-1,
+.layout-mascotes .posicao-2 {
+    position: absolute !important;
+    width: 126px !important;
+    height: 174px !important;
+    /* O 'top' compartilhado foi removido para cada uma ter sua própria altura */
+}
+
+/* Figurinha 2 (Superior Esquerda) */
+.layout-mascotes .posicao-1 {
+    top: 158px !important;   /* Empurra para cima */
+    left: 85px !important;   /* Mantém no canto esquerdo */
+}
+
+/* Figurinha 3 (Inferior Direita) */
+.layout-mascotes .posicao-2 {
+    top: 447px !important;   /* Empurra para baixo */
+    right: 82px !important;  /* Mantém no canto direito */
+}
+
+/* ---------------- LAYOUT 3: COLABORADORES I (Grid 3x3) ---------------- */
+/* Como esse já tem 9, ele vai herdar o grid padrão do site, só garantimos o alinhamento */
+.layout-colab-1 {
+    padding-top: 150px !important; /* Empurra o grid inteiro para baixo se precisar */
+}
+
+/* ---------------- LAYOUT 4: COLABORADORES II (7 Figurinhas: 3, 3, 1) ---------------- */
+.layout-colab-2 {
+    padding-top: 150px !important;
+}
+/* Força a última figurinha (a 7ª) a ficar sozinha na última coluna, centralizada! */
+.layout-colab-2 .posicao-7 {
+    grid-column: 3; 
+    grid-row: 2; 
+}
+
+/* ---------------- LAYOUT 5: FÁBRICAS (4 Verticais, 1 Horizontal) ---------------- */
+.layout-fabricas .posicao-1, .layout-fabricas .posicao-2,
+.layout-fabricas .posicao-3, .layout-fabricas .posicao-4 {
+    position: absolute !important;
+    width: 105px !important;
+    height: 145px !important;
+}
+/* Os 4 cantos */
+.layout-fabricas .posicao-1 { top: 120px !important; left: 60px !important; }
+.layout-fabricas .posicao-2 { top: 120px !important; right: 60px !important; }
+.layout-fabricas .posicao-3 { bottom: 120px !important; left: 60px !important; }
+.layout-fabricas .posicao-4 { bottom: 120px !important; right: 60px !important; }
+
+/* A 5ª Figurinha (Horizontal no centro) */
+.layout-fabricas .posicao-5.sticker-horizontal {
+    position: absolute !important;
+    width: 145px !important;  /* Inverte a largura... */
+    height: 105px !important; /* ...com a altura */
+    top: 250px !important;    /* Altura dela na página */
+    left: 50% !important;
+    transform: translateX(-50%) !important; /* Centraliza perfeitamente */
+}
+
+#album-cover {
+    position: absolute;
+    inset: 0;
+    z-index: 200;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+   background: 
+    radial-gradient(circle at top, rgba(255,255,255,0.08), transparent 60%),
+    linear-gradient(135deg, #0a1f44, #0f3d73);
+    
+    box-shadow: inset 0 0 80px rgba(0,0,0,0.5);
+    border-radius: 10px;
+
+    cursor: pointer;
+    transition: all 1s ease;
+}
+
+.cover-off {
+    transform: rotateY(-120deg) scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.bg-pitch-gradient {
+    background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary) 100%) !important;
+}
+
+#home-progress-bar {
+    background: linear-gradient(to right, var(--primary), var(--primary-light));
+    box-shadow: 0 0 15px rgba(0, 68, 124, 0.5);
+}
+
+/* Remove barras antigas */
+.slot-selected::before,
+.album-slot-empty::before {
+    display: none !important;
+}
+
+/* ============================= */
+/* PADRONIZAR BOTÕES DO MENU */
+/* ============================= */
+
+nav a,
+nav button{
+    background:#0078D4 !important;
+    color:white !important;
+    padding:8px 16px;
+    border-radius:20px;
+    margin-right:8px;
+    font-weight:500;
+}
+
+/* efeito ao passar o mouse */
+nav a:hover,
+nav button:hover{
+    background:#005fa3 !important;
+}
+
+/* ============================= */
+/* FORÇAR NOVA PALETA DE CORES */
+/* ============================= */
+
+body{
+    background:#112943 !important;
+}
+
+/* cores principais */
+
+.bg-pitch,
+.from-pitch,
+.to-pitch,
+.text-pitch,
+.border-pitch{
+    background-color:#0078D4 !important;
+    color:white !important;
+}
+
+.text-pitch-light{
+    color:#0078D4 !important;
+}
+
+.bg-pitch-dark{
+    background:#005A9E !important;
+}
+
+/* gradientes */
+
+.bg-gradient-to-br{
+    background:linear-gradient(135deg,#112943,#0078D4) !important;
+}
+
+.bg-gradient-to-r{
+    background:linear-gradient(90deg,#005A9E,#0078D4) !important;
+}
+
+/* header */
+
+header{
+    background:#112943 !important;
+}
+
+/* cards */
+
+.glass{
+    background:rgba(17,41,67,0.8) !important;
+}
+
+/* progress bar */
+
+#home-progress-bar{
+    background:#0078D4 !important;
+}
+/* Ajuste para o botão ativo não ser sobrescrito pelo !important anterior */
+
+.nav-btn.bg-\[\#005A9E\] {
+    background-color: #005A9E !important;
+    color: white !important;
+}
+
+/* Estilo da Badge de Figurinha Repetida */
+
+.sticker-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #ef4444; /* Vermelho Nestlé */
+    color: white;
+    font-size: 10px;
+    font-weight: 900;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 10;
+}
+/* ... (seu código anterior) ... */
+
+/* progress bar */
+#home-progress-bar{
+    background:#0078D4 !important;
+}
+
+/* ============================= */
+/* AJUSTES DE FORMULÁRIO         */
+/* ============================= */
+
+/* Ajuste para o campo de seleção (Planta) ter uma setinha branca customizada */
+select#reg-city {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.5em;
+    padding-right: 2.5rem;
+}
+
+/* ---------------- Ranking ---------------- */
+
+@keyframes glowGold {
+  0% {
+    box-shadow: inset 0 0 8px 2px rgba(255, 215, 0, 0.7);
+  }
+  100% {
+    box-shadow: inset 0 0 15px 5px rgba(255, 223, 0, 1);
+  }
+}
+
+/* ---------------- Barra de progresso com bola ---------------- */
+
+#home-progress-bar {
+    background: #10b981;
+    position: relative;
+}
+
+.progress-container {
+    position: relative;
+    width: 100%;
+    height: 20px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.2);
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    border-radius: 12px;
+    background: linear-gradient(to right, #0078D4, #1A5C96);
+    transition: width 1s ease-in-out;
+    box-shadow: 0 0 15px rgba(0, 124, 33, 0.5);
+}
+
+.progress-ball {
+    position: absolute;
+    top: 50%;
+    left: 0%; /* O JavaScript controlará isso */
+    transform: translate(-50%, -50%);
+    
+    /* Aumentamos de 10px para 18px para sobressair aos 12px da barra */
+    width: 18px; 
+    height: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Seu estilo visual mantido e aprimorado */
+    background: radial-gradient(circle at 30% 30%, #ffffff, #e5e7eb);
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+
+    /* Transição suave para acompanhar a barra */
+    transition: left 1s ease, opacity 0.3s ease;
+    z-index: 20; /* Garante que fique acima de tudo */
+}
+
+.progress-ball:hover {
+    transform: translate(-50%, -60%) scale(1.1);
+}
+
+.progress-ball::after {
+    content: "⚽";
+}
+
+@keyframes bounceBall {
+    0% { transform: translate(-50%, -50%) scale(0.8); }
+    50% { transform: translate(-50%, -70%) scale(1.2); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+/* Responsividade */ 
+
+@media (max-width: 768px) {
+
+    /* Container vira coluna */
+
+    #album-pages-container {
+        flex-direction: column;
+        max-width: 95%;
+    }
+
+    /* Cada página ocupa 100% */
+
+    #album-grid-left,
+    #album-grid-right {
+        width: 100% !important;
+        padding: 80px 20px 60px 20px !important;
+    }
+
+    /* Grid menor (2x3) */
+
+    #album-grid-left,
+    #album-grid-right {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+    }
+
+    /* Ajusta gap */
+
+    #album-grid-left,
+    #album-grid-right {
+        gap: 12px !important;
+    }
+
+    /* Remove vinco no meio (não faz sentido no mobile) */
+
+    #album-pages-container::after {
+        display: none;
+    }
+
+    /* Corrige figurinhas da página 1 */
+
+    .figura1,
+    .figura2 {
+        position: static !important;
+        width: 100% !important;
+        height: auto !important;
+        margin-bottom: 10px;
+    }
+}
+/* =======================================================
+   CORREÇÃO DEFINITIVA DO FUNDO E ALTURA DO ÁLBUM
+   ======================================================= */
+
+/* 1. Removemos o chiclete (100% 100%) e voltamos pro "cover" original, 
+      garantindo que NENHUMA imagem de fundo fique achatada ou distorcida.
+   2. Fixamos a altura mínima em 720px (que é o tamanho exato que a 
+      Página do Time atinge naturalmente com as 9 figurinhas). */
+
+#album-grid-left, #album-grid-right {
+    background-size: cover !important; 
+    background-position: center !important;
+    min-height: 768px !important; 
+}
+
+/* Responsividade: ajusta a altura na versão de celular para não quebrar a tela */
+@media (max-width: 768px) {
+    #album-grid-left, #album-grid-right {
+        min-height: 500px !important; 
+    }
+}
+
+
+/* Proteção de fundo para os novos layouts */
+.layout-misto, .layout-fabricas {
+    position: relative !important;
+    display: block !important;
+    padding: 0 !important;
+}
+ 
+/* ========================================================================
+   ALINHAMENTO E TAMANHO PERFEITOS: LAYOUT MISTO (Esq) E FÁBRICAS (Dir)
+   ======================================================================== */
+
+/* 1. A BAZUCA DO TAMANHO (Força todas a terem 126x174) */
+.layout-misto > div,
+.layout-misto .posicao-1, .layout-misto .posicao-2, .layout-misto .posicao-4, .layout-misto .posicao-5,
+.layout-fabricas > div,
+.layout-fabricas .posicao-1, .layout-fabricas .posicao-2, .layout-fabricas .posicao-3, .layout-fabricas .posicao-4, .layout-fabricas .posicao-5 {
+    position: absolute !important;
+    width: 126px !important;
+    height: 174px !important;
+}
+
+/* 2. As duas de CIMA (Alinhadas na mesma reta exata: 115px do topo) */
+.layout-misto .posicao-1, .layout-fabricas .posicao-1 { top: 115px !important; left: 60px !important; }
+.layout-misto .posicao-2, .layout-fabricas .posicao-2 { top: 115px !important; right: 60px !important; }
+
+/* 3. As duas de BAIXO (Alinhadas na mesma reta exata: 100px do fundo) */
+.layout-misto .posicao-4, .layout-fabricas .posicao-4 { bottom: 100px !important; left: 60px !important; }
+.layout-misto .posicao-5, .layout-fabricas .posicao-5 { bottom: 100px !important; right: 60px !important; }
+
+/* ========================================================================
+   ALINHAMENTO E TAMANHO PERFEITOS: LAYOUT MISTO (Esq) E FÁBRICAS (Dir)
+   ======================================================================== */
+
+/* 1. A BAZUCA DO TAMANHO (Força todas a terem 126x174) */
+.layout-misto > div,
+.layout-misto .posicao-1, .layout-misto .posicao-2, .layout-misto .posicao-4, .layout-misto .posicao-5,
+.layout-fabricas > div,
+.layout-fabricas .posicao-1, .layout-fabricas .posicao-2, .layout-fabricas .posicao-3, .layout-fabricas .posicao-4, .layout-fabricas .posicao-5 {
+    position: absolute !important;
+    width: 126px !important;
+    height: 174px !important;
+}
+
+/* 2. As duas de CIMA */
+.layout-misto .posicao-1, .layout-fabricas .posicao-1 { top: 115px !important; left: 60px !important; }
+.layout-misto .posicao-2, .layout-fabricas .posicao-2 { top: 115px !important; right: 60px !important; }
+
+/* 3. As duas de BAIXO */
+.layout-misto .posicao-4, .layout-fabricas .posicao-4 { bottom: 100px !important; left: 60px !important; }
+.layout-misto .posicao-5, .layout-fabricas .posicao-5 { bottom: 100px !important; right: 60px !important; }
+
+/* 4. O MEIO DA PÁGINA ESQUERDA (Horizontal deitada bonitinha) */
+.layout-misto .posicao-3.sticker-horizontal {
+    width: 174px !important;  
+    height: 126px !important; 
+    top: 340px !important; 
+    /* Centralizado com Calc (50% menos metade da largura) para liberar a animação! */
+    left: calc(50% - 87px) !important;
+}
+
+/* 5. O MEIO DA PÁGINA DIREITA (Vertical centralizada) */
+.layout-fabricas .posicao-3 { 
+    top: 315px !important; 
+    /* Centralizado com Calc (50% menos metade de 126px) para liberar a animação! */
+    left: calc(50% - 63px) !important; 
+}
+
+/* ========================================================================
+   LAYOUT PIRÂMIDE (1 Topo Central / 2 Meio Horiz / 2 Base Vert)
+   ======================================================================== */
+
+/* 1. DEFINIÇÃO DE TAMANHOS PADRÃO (A BAZUCA) */
+.layout-piramide .posicao-1, 
+.layout-piramide .posicao-4, 
+.layout-piramide .posicao-5 {
+    position: absolute !important;
+    width: 126px !important;
+    height: 174px !important;
+}
+
+/* Força o tamanho das Horizontais do Meio */
+.layout-piramide .sticker-horizontal {
+    width: 174px !important;  
+    height: 126px !important;
+    position: absolute !important;
+}
+
+/* 2. CAMADA 1: TOPO (Posição 1 centralizada) */
+.layout-piramide .posicao-1 { 
+    top: 120px !important; 
+    left: calc(50% - 63px) !important; /* Metade da largura de 126px */
+}
+
+/* 3. CAMADA 2: MEIO (Posições 2 e 3 - Horizontais lado a lado) */
+.layout-piramide .posicao-2.sticker-horizontal {
+    top: 350px !important; 
+    left: 60px !important; /* Encostada na esquerda */
+}
+
+.layout-piramide .posicao-3.sticker-horizontal {
+    top: 350px !important; 
+    right: 15px !important; /* Encostada na direita */
+    left: 320px !important;
+}
+
+/* 4. CAMADA 3: BAIXO (Posições 4 e 5 - Verticais lado a lado) */
+.layout-piramide .posicao-4 { 
+    bottom: 80px !important; 
+    left: 60px !important; 
+}
+
+.layout-piramide .posicao-5 { 
+    bottom: 80px !important; 
+    right: 60px !important; 
+    left: auto !important;
+}

@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Álbum de Figurinhas da Copa 2026</title>
+    <link rel="icon" type="image/png" href="Imagens/LogoPreta.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Outfit:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { display: ['Montserrat', 'sans-serif'], body: ['Outfit', 'sans-serif'] },
+                    colors: {
+                        pitch: { light: '#6cb2eb', DEFAULT: '#3b82f6', dark: '#1e40af' },
+                        trophy: { gold: '#FFDF00', silver: '#bdc3c7', bronze: '#e67e22' },
+                        stadium: { 900: '#001f3f', 800: '#003366', 700: '#004080' }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-stadium-900 text-slate-100 font-body min-h-screen">
+
+    <header id="main-header" class="hidden sticky top-0 z-50 bg-[#112943] border-b border-white/10 px-4 py-3 shadow-lg">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+
+<div onclick="showSection('home')"
+    class="flex items-center gap-3 cursor-pointer hover:opacity-80 transition-all group">
+
+    <!-- Logo da Engenharia à esquerda -->
+<div class="border border-white/10 rounded-lg p-1.5 bg-white/5 backdrop-blur-sm group-hover:border-[#0078D4] w-12 h-12 flex items-center justify-center overflow-hidden">
+  <img src="Imagens/Logo%20da%20Engenharia%20Branca.png"
+       alt="Logo Engenharia"
+       class="object-contain scale-[2.5] translate-x-[1px] translate-y-[4px]">
+</div>
+
+    <!-- Logo da Empresa -->
+    <div
+        class="border border-white/10 rounded-lg p-1.5 bg-white/5 backdrop-blur-sm group-hover:border-[#0078D4] w-12 h-12 flex items-center justify-center">
+        <img src="Imagens/LogoBranca2.png" alt="Logo Empresa" class="object-contain scale-[1.4] translate-x-[1px] translate-y-[1px]">
+    </div>
+
+   <h1 class="font-display font-black text-lg md:text-xl tracking-tight hidden lg:block text-white">
+        COPA <span class="text-[#0078D4]">ENGENHARIA</span>
+    </h1>
+</div>
+
+            <nav id="nav-menu" class="hidden md:flex gap-2">
+                <button onclick="showSection('missions')"
+                    class="nav-btn px-4 py-2 rounded-full text-sm font-bold transition text-slate-300 hover:bg-white/10">Missões</button>
+                <button onclick="showSection('album')"
+                    class="nav-btn px-4 py-2 rounded-full text-sm font-bold transition text-slate-300 hover:bg-white/10">Álbum</button>
+                <button onclick="showSection('store')"
+                    class="nav-btn px-4 py-2 rounded-full text-sm font-bold transition text-slate-300 hover:bg-white/10">Loja</button>
+                <button onclick="showSection('ranking')"
+                    class="nav-btn px-4 py-2 rounded-full text-sm font-bold transition text-slate-300 hover:bg-white/10">Ranking</button>
+                 <button onclick="showSection('trocas')" class="nav-btn px-4 py-2 rounded-full text-sm font-bold transition text-slate-300 hover:bg-white/10">Trocas</button> 
+                 
+                 <button id="btn-menu-aprovacoes" onclick="showSection('aprovacoes')" class="hidden nav-btn px-4 py-2 rounded-full text-sm font-bold transition text-slate-300 hover:bg-white/10">
+                 Aprovações
+        </button>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                
+                <div class="relative flex flex-col items-end border-r border-white/10 pr-4 cursor-pointer group" onclick="toggleLogout()">
+                    
+                    <div class="flex items-center gap-2">
+                        <span id="header-player-name" class="text-sm font-bold text-white leading-tight group-hover:text-[#0078D4] transition-colors">Admin</span>
+                        <span id="notificacao-badge" class="hidden bg-red-500 text-white text-[9px] font-black w-4 h-4 rounded-full flex items-center justify-center shadow-lg">0</span>
+                    </div>
+                    
+                <span class="text-[10px] font-bold text-[#0078D4] tracking-widest uppercase">
+                    <span id="header-player-city">Cidade</span>
+                </span>
+
+
+                    <div id="logout-menu" class="hidden absolute top-full right-0 mt-3 w-[360px] bg-[#112943] border border-white/10 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.7)] z-50 overflow-hidden cursor-default" onclick="event.stopPropagation()">
+                        <div class="px-5 py-4 flex justify-between items-center border-b border-white/5 bg-[#0a1828]">
+                            <h3 class="text-white font-black text-sm uppercase tracking-widest flex items-center gap-2">
+                                <svg class="w-4 h-4 text-[#0078D4]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
+                                Avisos
+                            </h3>
+                            <button onclick="logout()" class="text-[10px] font-black text-red-400 hover:text-white transition-colors uppercase bg-white/5 hover:bg-red-500 px-3 py-1.5 rounded-lg flex items-center gap-1">
+                                Sair
+                            </button>
+                        </div>
+                        <div id="notificacoes-lista" class="max-h-[350px] overflow-y-auto bg-[#112943]"></div>
+                    </div>
+                </div>
+
+    <!-- Alterado de "Imagens/Bandeira%20BR" para "Imagens/bandeira-br.png" -->
+<div class="flex items-center gap-1.5 bg-white/10 px-3 py-1.5 rounded-full border border-white/10">
+    <img src="Imagens/bandeira-br.png" alt="BR" style="width:20px; height:auto; border-radius:3px;" onerror="this.style.display='none'">
+    
+    <div class="flex items-center gap-1 leading-none">
+        <span class="text-trophy-gold font-bold text-lg" id="header-coin-balance">0</span>
+        <span style="margin-top: -2px;">🪙</span>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto p-4 md:p-8">
+
+        <section id="login" class="page-transition min-h-[80vh] flex items-center justify-center">
+            <div
+                class="glass p-8 rounded-3xl w-full max-w-md space-y-8 relative overflow-hidden bg-white/5 border border-white/10 backdrop-blur-md">
+                <div class="absolute -top-10 -right-10 w-32 h-32 bg-pitch/20 rounded-full blur-3xl"></div>
+                <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-blue-500/20 rounded-full blur-3xl"></div>
+
+                <!-- Alterado de "Imagens/Bandeira_BR.png" para "Imagens/bandeira-br.png" -->
+            <div class="text-center space-y-2 relative z-10">
+                <div class="flex justify-center mb-6">
+                    <img src="Imagens/LogoBranca.png" alt="Logo da Empresa" class="h-20">
+                </div>
+                <img src="Imagens/bandeira-br.png" alt="Bandeira do Brasil" class="h-6 absolute -top-10 right-0 z-60">
+                <h2 class="text-3xl font-display font-black text-white">LOGIN DO JOGADOR</h2>
+                <p class="text-slate-400">Insira suas credenciais para começar a jogar!</p>
+            </div>
+
+                <form onsubmit="handleLogin(event)" class="space-y-4 relative z-10">
+                    <div>
+                        <label
+                            class="block text-xs font-bold uppercase tracking-wider mb-2 text-slate-400">E-mail</label>
+                        <input type="email" id="email"
+                            class="w-full bg-stadium-800/50 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-pitch focus:bg-stadium-800 transition text-white placeholder-slate-600"
+                            >
+                    </div>
+                  <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider mb-2 text-slate-400">Senha</label>
+                    <input type="password" id="password"
+                        class="w-full bg-stadium-800/50 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-pitch focus:bg-stadium-800 transition text-white placeholder-slate-600"
+                        >
+                    <div class="text-right mt-2">
+                        <button type="button" onclick="document.getElementById('login').classList.add('hidden'); document.getElementById('reset-password').classList.remove('hidden');" class="text-xs text-blue-400 hover:text-white font-bold transition-colors">
+                      Esqueci minha senha
+                    </button>
+                    </div>
+                </div>
+                    <button type="submit"
+                        class="w-full bg-gradient-to-r from-pitch-dark to-pitch hover:to-pitch-light text-white font-black py-4 rounded-xl shadow-lg shadow-pitch/20 transition-all hover:scale-[1.02]">ENTRAR
+                        NO JOGO</button>
+
+                    <p class="text-center text-xs text-slate-400 mt-4">
+                        Não tem conta? <a href="#" onclick="showSection('register')"
+                            class="text-pitch-light hover:underline font-bold">Cadastre-se aqui</a>
+                    </p>
+                </form>
+            </div>
+        </section>
+
+        <section id="register" class="hidden min-h-screen flex items-center justify-center px-4 pt-10 pb-20">
+            <div
+                class="glass p-8 rounded-3xl w-full max-w-md flex flex-col gap-4 shadow-2xl relative bg-white/5 border border-white/10 backdrop-blur-md">
+
+                <div class="text-center mb-4">
+                    <h2 class="text-3xl font-display font-black text-white italic">NOVO JOGADOR</h2>
+                    <p class="text-slate-400 text-sm">Preencha os dados para entrar no time.</p>
+                </div>
+
+                <div class="space-y-1">
+                    <label class="text-xs font-bold text-slate-400 uppercase ml-1">Nome Completo</label>
+                    <input type="text" id="reg-name"
+                        class="w-full bg-[#112943] border border-white/10 rounded-xl px-4 py-3 text-white focus:border-[#0078D4] outline-none transition-all">
+                </div>
+
+                <div class="space-y-1">
+                    <label class="text-xs font-bold text-slate-400 uppercase ml-1">E-mail</label>
+                    <input type="email" id="reg-email" placeholder="nome.sobrenome@empresa.com"
+                        class="w-full bg-[#112943] border border-white/10 rounded-xl px-4 py-3 text-white focus:border-[#0078D4] outline-none transition-all">
+                </div>
+
+                <div class="space-y-1">
+                    <label class="text-xs font-bold text-slate-400 uppercase ml-1">Planta / Unidade</label>
+                   <!-- Lista de Plantas Atualizada -->
+                <!-- Lista de Plantas com Layout Corrigido -->
+                <select id="reg-city" class="w-full bg-transparent border border-slate-700 rounded-lg text-white p-3 appearance-none focus:ring-2 focus:ring-blue-500" required>
+                <option value="" disabled selected class="bg-[#001f3f] text-slate-400">Selecione sua planta</option>
+                <option value="1" class="bg-[#001f3f] text-white">Sede</option>
+                <option value="2" class="bg-[#001f3f] text-white">Araçatuba</option>
+                <option value="3" class="bg-[#001f3f] text-white">Araras</option>
+                <option value="4" class="bg-[#001f3f] text-white">Caçapava CPW</option>
+                <option value="5" class="bg-[#001f3f] text-white">Ibiá</option>
+                <option value="6" class="bg-[#001f3f] text-white">Ituiutaba</option>
+                <option value="7" class="bg-[#001f3f] text-white">Marília</option>
+                <option value="8" class="bg-[#001f3f] text-white">Rio Pardo</option>
+                <option value="9" class="bg-[#001f3f] text-white">Vila Velha</option>
+                <option value="10" class="bg-[#001f3f] text-white">Feira de Santana</option>
+                <option value="11" class="bg-[#001f3f] text-white">NDG</option>
+                <!-- 👇 O ajuste foi feito nestas três últimas 👇 -->
+                <option value="12" class="bg-[#001f3f] text-white">Montes Claros</option>
+                <option value="13" class="bg-[#001f3f] text-white">Caçapava</option>
+                <option value="14" class="bg-[#001f3f] text-white">Goiânia</option>
+                <option value="28" class="bg-[#001f3f] text-white">HUB CCT</option>
+                <option value="29" class="bg-[#001f3f] text-white">CIT</option>
+            </select>
+                </div>
+                
+                <div class="space-y-1">
+                <label class="text-xs font-bold text-slate-400 uppercase ml-1">Cargo</label>
+                <!-- Atualizamos o final desta linha com placeholder="Gerente de Projetos jr" -->
+                <input type="text" id="reg-role" class="w-full bg-transparent border border-slate-700 rounded-lg text-white p-3 focus:ring-2 focus:ring-blue-500 transition-all outline-none" placeholder="ex:Gerente de Projetos jr" required>
+                
+            </div>
+
+                <div class="space-y-1">
+                    <label class="text-xs font-bold text-slate-400 uppercase ml-1">Senha</label>
+                    <input type="password" id="reg-password"
+                        class="w-full bg-[#112943] border border-white/10 rounded-xl px-4 py-3 text-white focus:border-[#0078D4] outline-none transition-all">
+                </div>
+
+                <div class="space-y-1">
+                    <label class="text-xs font-bold text-slate-400 uppercase ml-1">Confirmar Senha</label>
+                    <input type="password" id="reg-password-confirm"
+                        class="w-full bg-[#112943] border border-white/10 rounded-xl px-4 py-3 text-white focus:border-[#0078D4] outline-none transition-all">
+                </div>
+
+                <button onclick="handleRegister(event)"
+                    class="w-full bg-[#0078D4] hover:bg-[#005fa3] text-white font-bold py-3 rounded-xl transition-all mt-4">
+                    CRIAR MINHA CONTA
+                </button>
+
+                <div class="text-center mt-2">
+                    <button
+                        onclick="document.getElementById('register').classList.add('hidden'); document.getElementById('login').classList.remove('hidden');"
+                        class="text-xs font-bold text-slate-400 hover:text-white transition-colors uppercase tracking-wider">
+                        VOLTAR AO LOGIN
+                    </button>
+                </div>
+            </div>
+        </section> <section id="reset-password" class="hidden min-h-screen flex items-center justify-center px-4 pt-10 pb-20">
+            <div class="glass p-8 rounded-3xl w-full max-w-md flex flex-col gap-4 shadow-2xl relative bg-white/5 border border-white/10 backdrop-blur-md">
+        
+                <div class="text-center mb-4">
+                    <h2 class="text-3xl font-display font-black text-white italic">NOVA SENHA</h2>
+                    <p class="text-slate-400 text-sm">Digite seu e-mail e crie uma senha nova.</p>
+                </div>
+        
+                <form onsubmit="handleResetPassword(event)" class="space-y-4">
+                    <div class="space-y-1">
+                        <label class="text-xs font-bold text-slate-400 uppercase ml-1">E-mail Cadastrado</label>
+                        <input type="email" id="reset-email" required
+                            class="w-full bg-[#112943] border border-white/10 rounded-xl px-4 py-3 text-white focus:border-[#0078D4] outline-none transition-all">
+                    </div>
+        
+                    <div class="space-y-1">
+                        <label class="text-xs font-bold text-slate-400 uppercase ml-1">Nova Senha</label>
+                        <input type="password" id="reset-nova-senha" required
+                            class="w-full bg-[#112943] border border-white/10 rounded-xl px-4 py-3 text-white focus:border-[#0078D4] outline-none transition-all">
+                    </div>
+        
+                    <div class="space-y-1">
+                        <label class="text-xs font-bold text-slate-400 uppercase ml-1">Confirmar Nova Senha</label>
+                        <input type="password" id="reset-confirma-senha" required
+                            class="w-full bg-[#112943] border border-white/10 rounded-xl px-4 py-3 text-white focus:border-[#0078D4] outline-none transition-all">
+                    </div>
+        
+                    <button type="submit"
+                        class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-xl transition-all mt-4">
+                        SALVAR NOVA SENHA
+                    </button>
+                </form>
+        
+                <div class="text-center mt-2">
+                    <button onclick="document.getElementById('reset-password').classList.add('hidden'); document.getElementById('login').classList.remove('hidden');" type="button"
+                        class="text-xs font-bold text-slate-400 hover:text-white transition-colors uppercase tracking-wider">
+                        VOLTAR AO LOGIN
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="home" class="hidden page-transition space-y-8">
+            <div
+                class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-pitch-dark to-pitch p-8 md:p-12 shadow-2xl">
+                <div class="relative z-10 grid md:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-6 text-center md:text-left">
+                        <h2 class="text-4xl md:text-6xl font-display font-black leading-tight uppercase">
+                            BEM-VINDO(A), <br> <span id="home-player-name" class="text-pitch-light">JOGADOR</span>!  
+                        </h2>
+
+                        <p class="max-w-md text-lg text-white/90 mx-auto md:mx-0">
+                            Complete as missões, ganhe moedas e colecione figurinhas de todos os colaboradores e setores
+                            para ganhar o Grande Troféu.<br>Não deixe sua sequência quebrar!
+                        </p>
+
+                        <div class="flex flex-row flex-wrap justify-center md:justify-start items-center gap-4 mt-8">
+                            <button onclick="showSection('missions')"
+                                class="bg-white text-slate-900 px-8 py-4 rounded-2xl font-black text-lg hover:bg-slate-100 transition-all shadow-xl uppercase">
+                                Ver Missões
+                            </button>
+
+                            <button onclick="showSection('store')"
+                                class="bg-white text-slate-900 px-8 py-4 rounded-2xl font-black text-lg hover:bg-slate-100 transition-all shadow-xl uppercase">
+                                Abrir Pacotes
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="hidden md:block">
+                        <div class="grid grid-cols-2 gap-4 animate-float">
+                            <div class="rounded-xl aspect-[3/4] rotate-[-6deg] shadow-[0_0_20px_rgba(255,255,255,0.2)] border border-white/50 relative overflow-hidden"
+                                style="background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 45%, #ffffff 50%, #cbd5e1 100%);">
+
+                                <img src="Imagens/112.svg"
+                                    class="absolute inset-0 w-full h-full object-cover"
+                                    onerror="this.style.opacity='0'">
+                            </div>
+
+                            <div class="rounded-xl aspect-[3/4] rotate-[8deg] translate-y-8 shadow-[0_0_30px_rgba(253,224,71,0.3)] border border-yellow-100/60 relative overflow-hidden"
+                                style="background: linear-gradient(135deg, #fefce8 0%, #e5f133 45%, #fef9c3 50%, #f1c157 100%);">
+
+                                <img src="Imagens/113.svg"
+                                    class="absolute inset-0 w-full h-full object-cover"
+                                    onerror="this.style.opacity='0'">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-gradient-to-br from-pitch-dark to-pitch p-6 rounded-3xl shadow-xl">
+                    <h3 class="text-white/80 font-semibold mb-2">Progresso do Jogador⚽</h3>
+                    <div class="flex items-end gap-3 mb-4">
+                        <span class="text-4xl font-display font-black text-white" id="home-progress-text">0%</span>
+                    </div>
+<!-- Removida a classe overflow-hidden -->
+<div class="w-full bg-white/20 h-3 rounded-full border border-white/10 relative">
+    <div id="home-progress-bar" class="h-full w-[0%] bg-blue-500 rounded-full transition-all duration-1000"></div>
+    <div id="home-progress-ball" class="progress-ball"></div>
+</div>
+                </div>
+
+                <div class="bg-gradient-to-br from-pitch-dark to-pitch p-6 rounded-3xl shadow-xl">
+                    <h3 class="text-white/80 font-semibold mb-2">Continue marcando gol!!!</h3>
+                    <div class="flex items-end gap-3">
+                        <span class="text-4xl font-display font-black text-white" id="home-unique-count">0 / 283</span>
+                    </div>
+                    <p class="mt-4 text-sm text-white/70 italic">Abra pacotes!</p>
+                </div>
+
+               <div class="bg-gradient-to-br from-pitch-dark to-pitch p-6 rounded-3xl shadow-xl flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-white/80 font-semibold mb-3 flex items-center gap-2">🎟️ Resgatar Cupom</h3>
+                        <p class="text-xs text-white/60 mb-4 leading-relaxed">Encontrou um código na nossa revista ou informativo? Insira abaixo para ganhar moedas!</p>
+                        
+                        <div class="space-y-3">
+                            <input type="text" id="cupom-input" placeholder="DIGITE O CÓDIGO" 
+                                class="w-full bg-[#001f3f] border border-white/20 rounded-xl px-4 py-3 text-white uppercase placeholder-slate-500 focus:outline-none focus:border-blue-400 transition-colors font-bold tracking-widest text-center">
+                            
+                            <button onclick="resgatarCupom()" 
+                                class="w-full bg-emerald-500 hover:bg-emerald-400 text-white font-black py-3 rounded-xl uppercase tracking-wider transition-transform active:scale-95 shadow-lg border border-emerald-400">
+                                Resgatar Moedas
+                            </button>
+                        </div>
+                    </div>
+                    <p id="cupom-message" class="text-sm text-center font-bold mt-4 hidden"></p>
+                </div>
+        </section>
+
+        <section id="missions" class="hidden page-transition space-y-6">
+            
+            <div class="flex flex-col md:flex-row md:items-start justify-between gap-6">
+                <div>
+                    <h2 class="text-4xl font-display font-black text-white uppercase tracking-tight">Missões</h2>
+                    <p class="text-slate-400">Complete tarefas, ganhe moedas e compre pacotinhos!</p>
+                </div>
+                
+                <div class="flex gap-3">
+                    <div class="bg-[#001f3f] border border-white/10 rounded-2xl p-4 w-24 text-center shadow-lg">
+                        <span id="stat-concluidas" class="block text-2xl font-black text-white mb-1">0</span>
+                        <span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Concluídas</span>
+                    </div>
+                    <div class="bg-[#001f3f] border border-white/10 rounded-2xl p-4 w-24 text-center shadow-lg">
+                        <span id="stat-moedas" class="block text-2xl font-black text-trophy-gold mb-1">0</span>
+                        <span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Moedas</span>
+                    </div>
+                    <div class="bg-[#001f3f] border border-white/10 rounded-2xl p-4 w-24 text-center shadow-lg">
+                        <span id="stat-analise" class="block text-2xl font-black text-amber-400 mb-1">0</span>
+                        <span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Em Análise</span>
+                    </div>
+                </div>
+            </div>
+
+<!-- Abas: Tipo (Semanal/Mensal) -->
+<div class="flex gap-2 p-1 bg-[#001f3f] border border-white/10 w-fit rounded-2xl shadow-inner mb-6">
+    <button onclick="filterMissions(null, 'semanal', this)" id="tab-semanal" 
+        class="time-tab px-6 py-2 rounded-xl text-sm font-black text-white bg-blue-600 border border-blue-400 shadow-[0_0_15px_rgba(37,99,235,0.4)] transition-all duration-300">
+        Semanal
+    </button>
+    <button onclick="filterMissions(null, 'mensal', this)" id="tab-mensal" 
+        class="time-tab px-6 py-2 rounded-xl text-sm font-bold text-slate-400 bg-transparent border border-transparent hover:text-white hover:bg-white/5 transition-all duration-300 opacity-70">
+        Mensal
+    </button>
+</div>
+
+<!-- Abas: Área -->
+<div class="flex gap-3 flex-wrap mb-8" id="filtros-area">
+    
+    <!-- Botão Ativo (Exemplo: Geral) -->
+    <button onclick="filterMissions('Geral', null, this)" 
+        class="area-tab px-5 py-2.5 rounded-full text-sm font-black text-white bg-blue-600 border border-blue-400 shadow-[0_0_15px_rgba(37,99,235,0.4)] transition-all duration-300 hover:scale-105 active:scale-95 flex items-center gap-2 tracking-wide">
+        ⚽ Geral
+    </button>
+
+    <!-- Botões Inativos -->
+    <button onclick="filterMissions('RH', null, this)" 
+        class="area-tab px-5 py-2.5 rounded-full text-sm font-bold text-slate-400 bg-white/5 border border-white/10 hover:bg-white/15 hover:text-white hover:border-white/30 transition-all duration-300 hover:scale-105 active:scale-95 flex items-center gap-2 tracking-wide">
+        👥 RH
+    </button>
+
+    <button onclick="filterMissions('I&I', null, this)" 
+        class="area-tab px-5 py-2.5 rounded-full text-sm font-bold text-slate-400 bg-white/5 border border-white/10 hover:bg-white/15 hover:text-white hover:border-white/30 transition-all duration-300 hover:scale-105 active:scale-95 flex items-center gap-2 tracking-wide">
+        💡 I&amp;I
+    </button>
+
+    <button onclick="filterMissions('SHE', null, this)" 
+        class="area-tab px-5 py-2.5 rounded-full text-sm font-bold text-slate-400 bg-white/5 border border-white/10 hover:bg-white/15 hover:text-white hover:border-white/30 transition-all duration-300 hover:scale-105 active:scale-95 flex items-center gap-2 tracking-wide">
+        🛡️ SHE
+    </button>
+</div>
+
+<div id="missions-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+
+<!-- Painel Gestor (só aparece para gestor/admin) -->
+<div id="painel-gestor" class="hidden">
+    <h3 class="text-xl font-black text-white mb-4 flex items-center gap-2">
+        🔐 Painel do Gestor 
+        <span id="gestor-area-label" class="text-sm font-bold text-trophy-gold bg-trophy-gold/10 px-3 py-1 rounded-full"></span>
+    </h3>
+    <div id="admin-requests-list"></div>
+</div>
+            
+</section>
+
+    <section id="store" class="hidden page-transition space-y-6 pb-20">
+    <div class="max-w-7xl mx-auto px-4 pt-4">
+        <a onclick="showSection('home')" style="cursor: pointer;"
+            class="flex items-center gap-2 text-slate-400 hover:text-white transition-colors group w-fit">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            <span class="text-sm font-bold uppercase tracking-wider">Voltar</span>
+        </a>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl font-display font-black text-white uppercase tracking-tighter">Loja de Figurinhas</h2>
+        <p class="text-white/60">Invista suas moedas suadas em novos pacotes.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-5xl mx-auto px-4">
+        
+        <div class="bg-gradient-to-br from-pitch-dark to-pitch p-8 rounded-3xl flex flex-col items-center text-center space-y-6 group border border-white/5 shadow-2xl transition-all duration-300">
+            <div class="relative">
+                <div class="w-52 aspect-[3/4] bg-gradient-to-br from-slate-400 to-slate-600 rounded-xl shadow-2xl transition-all duration-500 group-hover:scale-110 group-hover:-rotate-3 flex items-center justify-center border-4 border-white/20 overflow-hidden">
+                    <img src="Imagens/AbaLoja1.svg" alt="Pacote Padrão" class="w-full h-full object-contain">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="text-xl font-bold text-white uppercase tracking-tight">Pacote Padrão</h4>
+                <p class="text-white/60 text-sm">Contém <span class="text-white font-bold">3 figurinhas</span> básicas.</p>
+            </div>
+
+            <button onclick="preparePack('standard', 100)"
+                class="w-full bg-white text-pitch-dark py-4 rounded-2xl font-black flex items-center justify-center gap-2 hover:bg-slate-100 transition-all shadow-lg uppercase text-base active:scale-95">
+                <span>100</span>
+                <span class="text-amber-500 text-xl animate-pulse">🪙</span>
+            </button>
+        </div>
+
+        <div class="bg-gradient-to-br from-pitch-dark to-pitch p-8 rounded-3xl flex flex-col items-center text-center space-y-6 group border border-yellow-500/20 shadow-2xl transition-all duration-300">
+            <div class="relative">
+                <div class="w-52 aspect-[3/4] bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl shadow-[0_0_30px_rgba(250,204,21,0.3)] transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 flex items-center justify-center border-4 border-yellow-200/50 overflow-hidden">
+                    <img src="Imagens/AbaLoja2.svg" alt="Pacote Especial" class="w-full h-full object-contain">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-xl font-bold text-white uppercase tracking-tight">Pacote Especial</h4>
+                <p class="text-white/60 text-sm">Contém <span class="text-white font-bold">5 figurinhas especiais.</span></p>
+            </div>
+
+           <button onclick="preparePack('premium', 300)"
+    class="w-full bg-white text-pitch-dark py-4 rounded-2xl font-black flex items-center justify-center gap-2 hover:bg-slate-100 transition-all shadow-lg uppercase text-base active:scale-95">
+    <span>300</span>
+    <span class="text-amber-500 text-xl animate-pulse">🪙</span>
+</button>
+        </div>
+
+    </div>
+</section>
+
+
+        <section id="album" class="hidden page-transition space-y-8">
+            <div class="max-w-7xl mx-auto px-4 pt-4">
+                <a onclick="showSection('home')" style="cursor: pointer;"
+                    class="flex items-center gap-2 text-slate-400 hover:text-white transition-colors group w-fit">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                    <span class="text-sm font-bold uppercase tracking-wider">Voltar</span>
+                </a>
+            </div>
+
+            <div id="album-book" class="relative max-w-7xl mx-auto px-4">
+                <div class="flex items-end justify-between mb-6">
+                    <div>
+                        <h2 class="text-4xl font-display font-black text-white uppercase tracking-tighter">Coleção
+                            Oficial</h2>
+                    </div>
+                    <div
+                        class="flex items-center gap-4 bg-stadium-800 p-2 rounded-2xl border border-white/10 shadow-2xl">
+                        <button onclick="changePage(-1)" class="p-3 hover:bg-white/10 rounded-xl transition">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                    d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
+                        <span id="page-indicator"
+                            class="text-white font-black text-sm tracking-widest min-w-[120px] text-center uppercase">PÁGINAS
+                            01 - 02</span>
+                        <button onclick="changePage(1)" class="p-3 hover:bg-white/10 rounded-xl transition">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                    d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div
+                    class="relative bg-transparent rounded-[2.5rem] p-8 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.4)] flex gap-2 min-h-[700px] overflow-hidden" >
+
+                    <div id="album-cover"
+    class="absolute inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-[#0a1f44] to-[#0f3d73] overflow-hidden">
+                        <div class="absolute inset-0 opacity-[0.03]"
+                            style="background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');">
+                        </div>
+
+                        <div class="relative z-10 flex flex-col items-center">
+                     <div class="w-32 h-32 mb-8 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 shadow-xl">
+    
+    <img src="Imagens/LogoBranca2.png"
+         class="w-24 h-24 object-contain drop-shadow-lg">
+         
+</div>
+
+<h1 class="text-4xl font-display font-black tracking-tight uppercase text-center text-white">
+    COPA <span class="text-[#0078D4]">ENGENHARIA</span><br>
+    <span class="text-white text-sm tracking-[0.4em]">⚽ ÁLBUM • 2026 ⚽</span>
+</h1>
+
+                            <div class="text-white"></div>
+
+                            <br><button onclick="openAlbumCover()"
+                                class="group relative px-12 py-4 bg-slate-900 text-white font-black rounded-full overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-2xl">
+                                <span class="relative z-10">🏆 INICIAR COLEÇÃO 🏆</span>
+                                <div
+                                    class="absolute inset-0 bg-pitch scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500">
+                                </div>
+                            </button>
+                        </div>
+
+                        <div class="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-slate-200 to-transparent">
+                        </div>
+                    </div>
+
+                    <div class="absolute left-1/2 top-0 bottom-0 w-px bg-[#003366] shadow-xl z-10"></div>
+                    <div id="album-grid-left" class="page-texture w-1/2 relative p-4"></div>
+                    <div id="album-grid-right" class="page-texture w-1/2 relative grid grid-cols-3 gap-3 p-4"></div>
+
+                    <span id="page-number-left"
+                        class="absolute bottom-4 left-8 font-black text-slate-800/40 text-lg"></span>
+                    <span id="page-number-right"
+                        class="absolute bottom-4 right-8 font-black text-slate-800/40 text-lg"></span>
+                </div>
+            </div>
+        </section>
+
+       <section id="trocas" class="hidden page-transition space-y-8 pb-20">
+            <div class="max-w-7xl mx-auto px-4 pt-4">
+                <a onclick="showSection('home')" style="cursor: pointer;"
+                    class="flex items-center gap-2 text-slate-400 hover:text-white transition-colors group w-fit">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                    <span class="text-sm font-bold uppercase tracking-wider">Voltar</span>
+                </a>
+            </div>
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 px-4 max-w-7xl mx-auto">
+                <div class="space-y-2">
+                    <h2 class="text-4xl font-display font-black text-white tracking-tight flex items-center gap-4">
+                        <span class="bg-white/10 p-3 rounded-2xl border border-white/20 shadow-inner">
+                            <svg class="w-8 h-8 text-trophy-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                    d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4">
+                                </path>
+                            </svg>
+                        </span>
+                        ÁREA DE TROCAS
+                    </h2>
+                    <p class="text-slate-400">Veja quais colegas têm figurinhas repetidas que faltam no seu álbum!
+                    </p>
+                </div>
+            </div>
+
+            <div id="trocas-recebidas-container" class="hidden max-w-7xl mx-auto px-4 mb-8">
+                <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                    🔔 Pedidos Recebidos
+                </h3>
+                <div id="trocas-recebidas-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                </div>
+            </div>
+            <div id="trocas-grid" class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            </div>
+        </section>
+
+<section id="ranking" class="hidden page-transition space-y-8 pb-20">
+    <!-- Botão Voltar -->
+    <div class="max-w-7xl mx-auto px-4 pt-4">
+        <a onclick="showSection('home')" style="cursor: pointer;"
+            class="flex items-center gap-2 text-slate-400 hover:text-white transition-colors group w-fit">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            <span class="text-sm font-bold uppercase tracking-wider">Voltar</span>
+        </a>
+    </div>
+
+    <!-- Título e Botões de Filtro -->
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+            <h2 class="text-3xl font-display font-black text-white uppercase">Ranking da Copa</h2>
+            <p class="text-white/60">Veja quem são os maiores pontuadores da Copa Engenharia.</p>
+        </div>
+        
+        <div class="flex gap-2 p-1 bg-[#001f3f] border border-white/10 w-fit rounded-2xl shadow-inner mt-2">
+            <button onclick="mudarVisaoRanking('individual', this)" 
+                class="ranking-tab px-6 py-2 rounded-xl text-sm font-bold bg-blue-600 text-white transition-all shadow-md opacity-100 border-white">
+                Ranking Individual
+            </button>
+            <button onclick="mudarVisaoRanking('plantas', this)" 
+                class="ranking-tab px-6 py-2 rounded-xl text-sm font-bold text-slate-400 hover:text-white hover:bg-white/5 transition-all opacity-50">
+                Ranking das Plantas
+            </button>
+        </div>
+    </div>
+
+    <!-- Tabela do Ranking -->
+    <div class="max-w-5xl mx-auto px-4">
+        <div class="bg-stadium-800/80 rounded-3xl shadow-2xl border border-white/10 overflow-hidden backdrop-blur-md">
+            <table class="w-full text-left border-collapse">
+                <thead class="bg-stadium-900 border-b border-white/10 text-white/80 uppercase text-xs tracking-wider">
+                    <tr>
+                        <th class="px-8 py-6 font-bold w-24">Posição</th>
+                        <th id="coluna-nome-ranking" class="px-8 py-6 font-bold">Jogador</th>
+                        <th class="px-8 py-6 font-bold text-center">Total de Figurinhas</th>
+                        <th class="px-8 py-6 font-bold text-right">Moedas</th>
+                    </tr>
+                </thead>
+                <tbody id="ranking-body" class="divide-y divide-white/5">
+                    <!-- O JavaScript vai injetar as linhas aqui -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<section id="aprovacoes" class="hidden page-transition space-y-6 pb-20">
+    <div class="max-w-7xl mx-auto px-4 pt-4">
+        <button onclick="showSection('home')" class="text-slate-400 hover:text-white font-bold mb-4">⬅ Voltar</button>
+
+        <div class="bg-[#001f3f] p-6 rounded-2xl border border-white/10 shadow-xl">
+            <h2 class="text-3xl font-black text-white uppercase tracking-wider flex items-center gap-3">
+                🔐 Painel de Aprovações - <span id="nome-area-gestor" class="text-trophy-gold">Carregando...</span>
+            </h2>
+            <p class="text-gray-400 mt-2">Gerencie as solicitações da sua área e envie bônus diretos.</p>
+        </div>
+
+        <div class="bg-[#001f3f] p-6 rounded-2xl border border-yellow-500/30 shadow-[0_0_20px_rgba(250,204,21,0.1)] mt-6 relative overflow-hidden">
+            <div class="absolute -top-10 -right-10 w-32 h-32 bg-yellow-500/10 rounded-full blur-3xl"></div>
+            
+            <h3 class="text-xl font-black text-white uppercase tracking-wider mb-2 flex items-center gap-2 relative z-10">
+                💸 Transferência Rápida
+            </h3>
+            <p class="text-xs text-slate-400 mb-5 relative z-10">Envie moedas diretamente para o e-mail de um colaborador. Ele receberá uma notificação na mesma hora!</p>
+            
+            <div class="flex flex-wrap gap-4 items-end relative z-10">
+                <div class="flex-1 min-w-[200px]">
+                    <label class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1 block">E-mail do Colaborador</label>
+                    <input type="email" id="pix-email" placeholder="nome.sobrenome@empresa.com" class="w-full bg-[#112943] border border-white/10 rounded-lg px-3 py-2 text-white text-sm focus:border-yellow-400 outline-none transition-colors">
+                </div>
+                <div class="w-32">
+                    <label class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1 block">Moedas</label>
+                    <input type="number" id="pix-moedas" placeholder="Ex: 100" class="w-full bg-[#112943] border border-white/10 rounded-lg px-3 py-2 text-yellow-400 font-bold text-sm focus:border-yellow-400 outline-none transition-colors">
+                </div>
+                <div class="flex-1 min-w-[150px]">
+                    <label class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1 block">Motivo (Opcional)</label>
+                    <input type="text" id="pix-motivo" placeholder="Ex: Vencedor do Quiz" class="w-full bg-[#112943] border border-white/10 rounded-lg px-3 py-2 text-white text-sm focus:border-yellow-400 outline-none transition-colors">
+                </div>
+                <button onclick="enviarPixMoedas()" class="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-400 hover:to-yellow-500 text-stadium-900 font-black px-6 py-2 rounded-lg text-sm transition-transform active:scale-95 shadow-[0_0_15px_rgba(250,204,21,0.4)] h-[38px] flex items-center">
+                    ENVIAR 🪙
+                </button>
+            </div>
+            <p id="pix-mensagem" class="text-sm font-bold mt-4 hidden relative z-10"></p>
+        </div>
+
+        <div class="bg-[#001f3f] p-4 rounded-xl border border-white/10 mt-6 flex flex-wrap gap-3 items-end shadow-md">
+            <div class="flex-1 min-w-[200px]">
+                <label class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1 block">Colaborador</label>
+                <input type="text" id="filtro-nome-gestor" oninput="aplicarFiltrosGestor()" placeholder="Digite o nome..." class="w-full bg-[#112943] border border-white/10 rounded-lg px-3 py-2 text-white text-sm focus:border-blue-400 outline-none transition-colors">
+            </div>
+            <div class="flex-1 min-w-[200px]">
+                <label class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1 block">Missão</label>
+                <select id="filtro-missao-gestor" onchange="aplicarFiltrosGestor()" class="w-full bg-[#112943] border border-white/10 rounded-lg px-3 py-2 text-white text-sm focus:border-blue-400 outline-none appearance-none">
+                    <option value="">Todas as Missões</option>
+                </select>
+            </div>
+            <div class="flex-1 min-w-[200px]">
+                <label class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1 block">Planta</label>
+                <select id="filtro-planta-gestor" onchange="aplicarFiltrosGestor()" class="w-full bg-[#112943] border border-white/10 rounded-lg px-3 py-2 text-white text-sm focus:border-blue-400 outline-none appearance-none">
+                    <option value="">Todas as Plantas</option>
+                </select>
+            </div>
+            <button onclick="limparFiltrosGestor()" class="bg-slate-700 hover:bg-slate-600 text-white font-bold px-4 py-2 rounded-lg text-sm transition-colors border border-white/10">
+                Limpar
+            </button>
+        </div>
+
+
+
+        <div id="lista-pendentes" class="flex flex-col gap-4 mt-6">
+            <p class="text-white font-bold">Buscando missões pendentes...</p>
+        </div>
+    </div>
+</section>
+    </main>
+       
+    <div id="pack-modal"
+        class="hidden fixed inset-0 bg-stadium-900/90 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+        <div
+            class="bg-stadium-800 p-8 rounded-3xl shadow-2xl text-center max-w-2xl w-full border border-white/20 relative overflow-hidden">
+            <div class="absolute -top-20 -right-20 w-40 h-40 bg-pitch/20 rounded-full blur-3xl"></div>
+
+            <h2 id="modal-pack-name" class="text-3xl font-display font-black text-white uppercase mb-8 relative z-10">
+                Nome do Pacote</h2>
+
+            <div id="pack-sealed" class="flex flex-col items-center relative z-10">
+                <div class="w-48 h-64 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl mb-6 shadow-[0_0_40px_rgba(250,204,21,0.4)] border-4 border-yellow-200 cursor-pointer animate-pulse hover:scale-105 transition-transform"
+                    onclick="startOpening()">
+                    <div
+                        class="h-full flex items-center justify-center font-black text-2xl text-white drop-shadow-md p-4 text-center">
+                        CLIQUE PARA ABRIR
+                    </div>
+                </div>
+            </div>
+
+            <div id="pack-revealing" class="hidden flex flex-wrap justify-center gap-4 mb-8 relative z-10">
+            </div>
+
+            <button id="close-pack-btn" onclick="closePackModal()"
+                class="hidden bg-slate-700 text-white px-8 py-3 rounded-xl font-bold hover:bg-slate-600 transition mx-auto uppercase relative z-10">
+                Fechar e Guardar no Álbum
+            </button>
+        </div>
+    </div>
+
+    <script src="App.js?v=2.0"></script>
+</body>
+</html>
+    </body>
+
+</html>

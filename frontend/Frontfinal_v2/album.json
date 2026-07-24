@@ -1,0 +1,1706 @@
+[
+    {
+        "id": 1,
+        "nome": "Colaborador 1",
+        "rarity": "rare",
+        "url_imagem": "1.svg"
+    },
+    {
+        "id": 2,
+        "nome": "Colaborador 2",
+        "rarity": "rare",
+        "url_imagem": "2.svg"
+    },
+    {
+        "id": 3,
+        "nome": "Colaborador 3",
+        "rarity": "rare",
+        "url_imagem": "3.svg"
+    },
+    {
+        "id": 4,
+        "nome": "Colaborador 4",
+        "rarity": "rare",
+        "url_imagem": "4.svg"
+    },
+    {
+        "id": 5,
+        "nome": "Colaborador 5",
+        "rarity": "common",
+        "url_imagem": "5.svg"
+    },
+    {
+        "id": 6,
+        "nome": "Colaborador 6",
+        "rarity": "common",
+        "url_imagem": "6.svg"
+    },
+    {
+        "id": 7,
+        "nome": "Colaborador 7",
+        "rarity": "common",
+        "url_imagem": "7.svg"
+    },
+    {
+        "id": 8,
+        "nome": "Colaborador 8",
+        "rarity": "common",
+        "url_imagem": "8.svg"
+    },
+    {
+        "id": 9,
+        "nome": "Colaborador 9",
+        "rarity": "common",
+        "url_imagem": "9.svg"
+    },
+    {
+        "id": 10,
+        "nome": "Colaborador 10",
+        "rarity": "common",
+        "url_imagem": "10.svg"
+    },
+    {
+        "id": 11,
+        "nome": "Colaborador 11",
+        "rarity": "common",
+        "url_imagem": "11.svg"
+    },
+    {
+        "id": 12,
+        "nome": "Colaborador 12",
+        "rarity": "common",
+        "url_imagem": "12.svg"
+    },
+    {
+        "id": 13,
+        "nome": "Colaborador 13",
+        "rarity": "common",
+        "url_imagem": "13.svg"
+    },
+    {
+        "id": 14,
+        "nome": "Colaborador 14",
+        "rarity": "common",
+        "url_imagem": "14.svg"
+    },
+    {
+        "id": 15,
+        "nome": "Colaborador 15",
+        "rarity": "common",
+        "url_imagem": "15.svg"
+    },
+    {
+        "id": 16,
+        "nome": "Colaborador 16",
+        "rarity": "common",
+        "url_imagem": "16.svg"
+    },
+    {
+        "id": 17,
+        "nome": "Colaborador 17",
+        "rarity": "common",
+        "url_imagem": "17.svg"
+    },
+    {
+        "id": 18,
+        "nome": "Colaborador 18",
+        "rarity": "common",
+        "url_imagem": "18.svg"
+    },
+    {
+        "id": 19,
+        "nome": "Colaborador 19",
+        "rarity": "common",
+        "url_imagem": "19.svg"
+    },
+    {
+        "id": 20,
+        "nome": "Colaborador 20",
+        "rarity": "common",
+        "url_imagem": "20.svg"
+    },
+    {
+        "id": 21,
+        "nome": "Colaborador 21",
+        "rarity": "common",
+        "url_imagem": "21.svg"
+    },
+    {
+        "id": 22,
+        "nome": "Colaborador 22",
+        "rarity": "common",
+        "url_imagem": "22.svg"
+    },
+    {
+        "id": 23,
+        "nome": "Colaborador 23",
+        "rarity": "common",
+        "url_imagem": "23.svg"
+    },
+    {
+        "id": 24,
+        "nome": "Colaborador 24",
+        "rarity": "common",
+        "url_imagem": "24.svg"
+    },
+    {
+        "id": 25,
+        "nome": "Colaborador 25",
+        "rarity": "common",
+        "url_imagem": "25.svg"
+    },
+    {
+        "id": 26,
+        "nome": "Colaborador 26",
+        "rarity": "common",
+        "url_imagem": "26.svg"
+    },
+    {
+        "id": 27,
+        "nome": "Colaborador 27",
+        "rarity": "common",
+        "url_imagem": "27.svg"
+    },
+    {
+        "id": 28,
+        "nome": "Colaborador 28",
+        "rarity": "common",
+        "url_imagem": "28.svg"
+    },
+    {
+        "id": 29,
+        "nome": "Colaborador 29",
+        "rarity": "common",
+        "url_imagem": "29.svg"
+    },
+    {
+        "id": 30,
+        "nome": "Colaborador 30",
+        "rarity": "common",
+        "url_imagem": "30.svg"
+    },
+    {
+        "id": 31,
+        "nome": "Colaborador 31",
+        "rarity": "common",
+        "url_imagem": "31.svg"
+    },
+    {
+        "id": 32,
+        "nome": "Colaborador 32",
+        "rarity": "common",
+        "url_imagem": "32.svg"
+    },
+    {
+        "id": 33,
+        "nome": "Colaborador 33",
+        "rarity": "common",
+        "url_imagem": "33.svg"
+    },
+    {
+        "id": 34,
+        "nome": "Colaborador 34",
+        "rarity": "common",
+        "url_imagem": "34.svg"
+    },
+    {
+        "id": 35,
+        "nome": "Colaborador 35",
+        "rarity": "common",
+        "url_imagem": "35.svg"
+    },
+    {
+        "id": 36,
+        "nome": "Colaborador 36",
+        "rarity": "common",
+        "url_imagem": "36.svg"
+    },
+    {
+        "id": 37,
+        "nome": "Colaborador 37",
+        "rarity": "common",
+        "url_imagem": "37.svg"
+    },
+    {
+        "id": 38,
+        "nome": "Colaborador 38",
+        "rarity": "common",
+        "url_imagem": "38.svg"
+    },
+    {
+        "id": 39,
+        "nome": "Colaborador 39",
+        "rarity": "common",
+        "url_imagem": "39.svg"
+    },
+    {
+        "id": 40,
+        "nome": "Colaborador 40",
+        "rarity": "common",
+        "url_imagem": "40.svg"
+    },
+    {
+        "id": 41,
+        "nome": "Colaborador 41",
+        "rarity": "common",
+        "url_imagem": "41.svg"
+    },
+    {
+        "id": 42,
+        "nome": "Colaborador 42",
+        "rarity": "common",
+        "url_imagem": "42.svg"
+    },
+    {
+        "id": 43,
+        "nome": "Colaborador 43",
+        "rarity": "common",
+        "url_imagem": "43.svg"
+    },
+    {
+        "id": 44,
+        "nome": "Colaborador 44",
+        "rarity": "common",
+        "url_imagem": "44.svg"
+    },
+    {
+        "id": 45,
+        "nome": "Colaborador 45",
+        "rarity": "common",
+        "url_imagem": "45.svg"
+    },
+    {
+        "id": 46,
+        "nome": "Colaborador 46",
+        "rarity": "common",
+        "url_imagem": "46.svg"
+    },
+    {
+        "id": 47,
+        "nome": "Colaborador 47",
+        "rarity": "common",
+        "url_imagem": "47.svg"
+    },
+    {
+        "id": 48,
+        "nome": "Colaborador 48",
+        "rarity": "common",
+        "url_imagem": "48.svg"
+    },
+    {
+        "id": 49,
+        "nome": "Colaborador 49",
+        "rarity": "common",
+        "url_imagem": "49.svg"
+    },
+    {
+        "id": 50,
+        "nome": "Colaborador 50",
+        "rarity": "common",
+        "url_imagem": "50.svg"
+    },
+    {
+        "id": 51,
+        "nome": "Colaborador 51",
+        "rarity": "common",
+        "url_imagem": "51.svg"
+    },
+    {
+        "id": 52,
+        "nome": "Colaborador 52",
+        "rarity": "common",
+        "url_imagem": "52.svg"
+    },
+    {
+        "id": 53,
+        "nome": "Colaborador 53",
+        "rarity": "common",
+        "url_imagem": "53.svg"
+    },
+    {
+        "id": 54,
+        "nome": "Colaborador 54",
+        "rarity": "common",
+        "url_imagem": "54.svg"
+    },
+    {
+        "id": 55,
+        "nome": "Colaborador 55",
+        "rarity": "common",
+        "url_imagem": "55.svg"
+    },
+    {
+        "id": 56,
+        "nome": "Colaborador 56",
+        "rarity": "common",
+        "url_imagem": "56.svg"
+    },
+    {
+        "id": 57,
+        "nome": "Colaborador 57",
+        "rarity": "common",
+        "url_imagem": "57.svg"
+    },
+    {
+        "id": 58,
+        "nome": "Colaborador 58",
+        "rarity": "common",
+        "url_imagem": "58.svg"
+    },
+    {
+        "id": 59,
+        "nome": "Colaborador 59",
+        "rarity": "common",
+        "url_imagem": "59.svg"
+    },
+    {
+        "id": 60,
+        "nome": "Colaborador 60",
+        "rarity": "common",
+        "url_imagem": "60.svg"
+    },
+    {
+        "id": 61,
+        "nome": "Colaborador 61",
+        "rarity": "common",
+        "url_imagem": "61.svg"
+    },
+    {
+        "id": 62,
+        "nome": "Colaborador 62",
+        "rarity": "common",
+        "url_imagem": "62.svg"
+    },
+    {
+        "id": 63,
+        "nome": "Colaborador 63",
+        "rarity": "common",
+        "url_imagem": "63.svg"
+    },
+    {
+        "id": 64,
+        "nome": "Colaborador 64",
+        "rarity": "common",
+        "url_imagem": "64.svg"
+    },
+    {
+        "id": 65,
+        "nome": "Colaborador 65",
+        "rarity": "common",
+        "url_imagem": "65.svg"
+    },
+    {
+        "id": 66,
+        "nome": "Colaborador 66",
+        "rarity": "common",
+        "url_imagem": "66.svg"
+    },
+    {
+        "id": 67,
+        "nome": "Colaborador 67",
+        "rarity": "common",
+        "url_imagem": "67.svg"
+    },
+    {
+        "id": 68,
+        "nome": "Colaborador 68",
+        "rarity": "common",
+        "url_imagem": "68.svg"
+    },
+    {
+        "id": 69,
+        "nome": "Colaborador 69",
+        "rarity": "common",
+        "url_imagem": "69.svg"
+    },
+    {
+        "id": 70,
+        "nome": "Colaborador 70",
+        "rarity": "common",
+        "url_imagem": "70.svg"
+    },
+    {
+        "id": 71,
+        "nome": "Colaborador 71",
+        "rarity": "common",
+        "url_imagem": "71.svg"
+    },
+    {
+        "id": 72,
+        "nome": "Colaborador 72",
+        "rarity": "common",
+        "url_imagem": "72.svg"
+    },
+    {
+        "id": 73,
+        "nome": "Colaborador 73",
+        "rarity": "common",
+        "url_imagem": "73.svg"
+    },
+    {
+        "id": 74,
+        "nome": "Colaborador 74",
+        "rarity": "common",
+        "url_imagem": "74.svg"
+    },
+    {
+        "id": 75,
+        "nome": "Colaborador 75",
+        "rarity": "common",
+        "url_imagem": "75.svg"
+    },
+    {
+        "id": 76,
+        "nome": "Colaborador 76",
+        "rarity": "common",
+        "url_imagem": "76.svg"
+    },
+    {
+        "id": 77,
+        "nome": "Colaborador 77",
+        "rarity": "common",
+        "url_imagem": "77.svg"
+    },
+    {
+        "id": 78,
+        "nome": "Colaborador 78",
+        "rarity": "common",
+        "url_imagem": "78.svg"
+    },
+    {
+        "id": 79,
+        "nome": "Colaborador 79",
+        "rarity": "common",
+        "url_imagem": "79.svg"
+    },
+    {
+        "id": 80,
+        "nome": "Colaborador 80",
+        "rarity": "common",
+        "url_imagem": "80.svg"
+    },
+    {
+        "id": 81,
+        "nome": "Colaborador 81",
+        "rarity": "common",
+        "url_imagem": "81.svg"
+    },
+    {
+        "id": 82,
+        "nome": "Colaborador 82",
+        "rarity": "common",
+        "url_imagem": "82.svg"
+    },
+    {
+        "id": 83,
+        "nome": "Colaborador 83",
+        "rarity": "common",
+        "url_imagem": "83.svg"
+    },
+    {
+        "id": 84,
+        "nome": "Colaborador 84",
+        "rarity": "common",
+        "url_imagem": "84.svg"
+    },
+    {
+        "id": 85,
+        "nome": "Colaborador 85",
+        "rarity": "common",
+        "url_imagem": "85.svg"
+    },
+    {
+        "id": 86,
+        "nome": "Colaborador 86",
+        "rarity": "common",
+        "url_imagem": "86.svg"
+    },
+    {
+        "id": 87,
+        "nome": "Colaborador 87",
+        "rarity": "common",
+        "url_imagem": "87.svg"
+    },
+    {
+        "id": 88,
+        "nome": "Colaborador 88",
+        "rarity": "common",
+        "url_imagem": "88.svg"
+    },
+    {
+        "id": 89,
+        "nome": "Colaborador 89",
+        "rarity": "common",
+        "url_imagem": "89.svg"
+    },
+    {
+        "id": 90,
+        "nome": "Colaborador 90",
+        "rarity": "common",
+        "url_imagem": "90.svg"
+    },
+    {
+        "id": 91,
+        "nome": "Colaborador 91",
+        "rarity": "common",
+        "url_imagem": "91.svg"
+    },
+    {
+        "id": 92,
+        "nome": "Colaborador 92",
+        "rarity": "common",
+        "url_imagem": "92.svg"
+    },
+    {
+        "id": 93,
+        "nome": "Colaborador 93",
+        "rarity": "common",
+        "url_imagem": "93.svg"
+    },
+    {
+        "id": 94,
+        "nome": "Colaborador 94",
+        "rarity": "common",
+        "url_imagem": "94.svg"
+    },
+    {
+        "id": 95,
+        "nome": "Colaborador 95",
+        "rarity": "common",
+        "url_imagem": "95.svg"
+    },
+    {
+        "id": 96,
+        "nome": "Colaborador 96",
+        "rarity": "common",
+        "url_imagem": "96.svg"
+    },
+    {
+        "id": 97,
+        "nome": "Colaborador 97",
+        "rarity": "common",
+        "url_imagem": "97.svg"
+    },
+    {
+        "id": 98,
+        "nome": "Colaborador 98",
+        "rarity": "common",
+        "url_imagem": "98.svg"
+    },
+    {
+        "id": 99,
+        "nome": "Colaborador 99",
+        "rarity": "common",
+        "url_imagem": "99.svg"
+    },
+    {
+        "id": 100,
+        "nome": "Colaborador 100",
+        "rarity": "common",
+        "url_imagem": "100.svg"
+    },
+    {
+        "id": 101,
+        "nome": "Colaborador 101",
+        "rarity": "common",
+        "url_imagem": "101.svg"
+    },
+    {
+        "id": 102,
+        "nome": "Colaborador 102",
+        "rarity": "common",
+        "url_imagem": "102.svg"
+    },
+    {
+        "id": 103,
+        "nome": "Colaborador 103",
+        "rarity": "common",
+        "url_imagem": "103.svg"
+    },
+    {
+        "id": 104,
+        "nome": "Colaborador 104",
+        "rarity": "common",
+        "url_imagem": "104.svg"
+    },
+    {
+        "id": 105,
+        "nome": "Colaborador 105",
+        "rarity": "common",
+        "url_imagem": "105.svg"
+    },
+    {
+        "id": 106,
+        "nome": "Colaborador 106",
+        "rarity": "common",
+        "url_imagem": "106.svg"
+    },
+    {
+        "id": 107,
+        "nome": "Colaborador 107",
+        "rarity": "common",
+        "url_imagem": "107.svg"
+    },
+    {
+        "id": 108,
+        "nome": "Colaborador 108",
+        "rarity": "common",
+        "url_imagem": "108.svg"
+    },
+    {
+        "id": 109,
+        "nome": "Colaborador 109",
+        "rarity": "common",
+        "url_imagem": "109.svg"
+    },
+    {
+        "id": 110,
+        "nome": "Colaborador 110",
+        "rarity": "common",
+        "url_imagem": "110.svg"
+    },
+    {
+        "id": 111,
+        "nome": "Colaborador 111",
+        "rarity": "common",
+        "url_imagem": "111.svg"
+    },
+    {
+        "id": 112,
+        "nome": "Colaborador 112",
+        "rarity": "rare",
+        "url_imagem": "112.svg"
+    },
+    {
+        "id": 113,
+        "nome": "Colaborador 113",
+        "rarity": "rare",
+        "url_imagem": "113.svg"
+    },
+    {
+        "id": 114,
+        "nome": "Colaborador 114",
+        "rarity": "rare",
+        "url_imagem": "114.svg"
+    },
+    {
+        "id": 115,
+        "nome": "Colaborador 115",
+        "rarity": "common",
+        "url_imagem": "115.svg"
+    },
+    {
+        "id": 116,
+        "nome": "Colaborador 116",
+        "rarity": "common",
+        "url_imagem": "116.svg"
+    },
+    {
+        "id": 117,
+        "nome": "Colaborador 117",
+        "rarity": "common",
+        "url_imagem": "117.svg"
+    },
+    {
+        "id": 118,
+        "nome": "Colaborador 118",
+        "rarity": "common",
+        "url_imagem": "118.svg"
+    },
+    {
+        "id": 119,
+        "nome": "Colaborador 119",
+        "rarity": "common",
+        "url_imagem": "119.svg"
+    },
+    {
+        "id": 120,
+        "nome": "Colaborador 120",
+        "rarity": "common",
+        "url_imagem": "120.svg"
+    },
+    {
+        "id": 121,
+        "nome": "Colaborador 121",
+        "rarity": "common",
+        "url_imagem": "121.svg"
+    },
+    {
+        "id": 122,
+        "nome": "Colaborador 122",
+        "rarity": "rare",
+        "url_imagem": "122.svg"
+    },
+    {
+        "id": 123,
+        "nome": "Colaborador 123",
+        "rarity": "rare",
+        "url_imagem": "123.svg"
+    },
+    {
+        "id": 124,
+        "nome": "Colaborador 124",
+        "rarity": "rare",
+        "url_imagem": "124.svg"
+    },
+    {
+        "id": 125,
+        "nome": "Colaborador 125",
+        "rarity": "common",
+        "url_imagem": "125.svg"
+    },
+    {
+        "id": 126,
+        "nome": "Colaborador 126",
+        "rarity": "common",
+        "url_imagem": "126.svg"
+    },
+    {
+        "id": 127,
+        "nome": "Colaborador 127",
+        "rarity": "common",
+        "url_imagem": "127.svg"
+    },
+    {
+        "id": 128,
+        "nome": "Colaborador 128",
+        "rarity": "common",
+        "url_imagem": "128.svg"
+    },
+    {
+        "id": 129,
+        "nome": "Colaborador 129",
+        "rarity": "common",
+        "url_imagem": "129.svg"
+    },
+    {
+        "id": 130,
+        "nome": "Colaborador 130",
+        "rarity": "common",
+        "url_imagem": "130.svg"
+    },
+    {
+        "id": 131,
+        "nome": "Colaborador 131",
+        "rarity": "common",
+        "url_imagem": "131.svg"
+    },
+    {
+        "id": 132,
+        "nome": "Colaborador 132",
+        "rarity": "rare",
+        "url_imagem": "132.svg"
+    },
+    {
+        "id": 133,
+        "nome": "Colaborador 133",
+        "rarity": "rare",
+        "url_imagem": "133.svg"
+    },
+    {
+        "id": 134,
+        "nome": "Colaborador 134",
+        "rarity": "rare",
+        "url_imagem": "134.svg"
+    },
+    {
+        "id": 135,
+        "nome": "Colaborador 135",
+        "rarity": "common",
+        "url_imagem": "135.svg"
+    },
+    {
+        "id": 136,
+        "nome": "Colaborador 136",
+        "rarity": "common",
+        "url_imagem": "136.svg"
+    },
+    {
+        "id": 137,
+        "nome": "Colaborador 137",
+        "rarity": "common",
+        "url_imagem": "137.svg"
+    },
+    {
+        "id": 138,
+        "nome": "Colaborador 138",
+        "rarity": "common",
+        "url_imagem": "138.svg"
+    },
+    {
+        "id": 139,
+        "nome": "Colaborador 139",
+        "rarity": "common",
+        "url_imagem": "139.svg"
+    },
+    {
+        "id": 140,
+        "nome": "Colaborador 140",
+        "rarity": "common",
+        "url_imagem": "140.svg"
+    },
+    {
+        "id": 141,
+        "nome": "Colaborador 141",
+        "rarity": "common",
+        "url_imagem": "141.svg"
+    },
+    {
+        "id": 142,
+        "nome": "Colaborador 142",
+        "rarity": "rare",
+        "url_imagem": "142.svg"
+    },
+    {
+        "id": 143,
+        "nome": "Colaborador 143",
+        "rarity": "rare",
+        "url_imagem": "143.svg"
+    },
+    {
+        "id": 144,
+        "nome": "Colaborador 144",
+        "rarity": "rare",
+        "url_imagem": "144.svg"
+    },
+    {
+        "id": 145,
+        "nome": "Colaborador 145",
+        "rarity": "common",
+        "url_imagem": "145.svg"
+    },
+    {
+        "id": 146,
+        "nome": "Colaborador 146",
+        "rarity": "common",
+        "url_imagem": "146.svg"
+    },
+    {
+        "id": 147,
+        "nome": "Colaborador 147",
+        "rarity": "common",
+        "url_imagem": "147.svg"
+    },
+    {
+        "id": 148,
+        "nome": "Colaborador 148",
+        "rarity": "common",
+        "url_imagem": "148.svg"
+    },
+    {
+        "id": 149,
+        "nome": "Colaborador 149",
+        "rarity": "common",
+        "url_imagem": "149.svg"
+    },
+    {
+        "id": 150,
+        "nome": "Colaborador 150",
+        "rarity": "common",
+        "url_imagem": "150.svg"
+    },
+    {
+        "id": 151,
+        "nome": "Colaborador 151",
+        "rarity": "common",
+        "url_imagem": "151.svg"
+    },
+    {
+        "id": 152,
+        "nome": "Colaborador 152",
+        "rarity": "rare",
+        "url_imagem": "152.svg"
+    },
+    {
+        "id": 153,
+        "nome": "Colaborador 153",
+        "rarity": "rare",
+        "url_imagem": "153.svg"
+    },
+    {
+        "id": 154,
+        "nome": "Colaborador 154",
+        "rarity": "rare",
+        "url_imagem": "154.svg"
+    },
+    {
+        "id": 155,
+        "nome": "Colaborador 155",
+        "rarity": "common",
+        "url_imagem": "155.svg"
+    },
+    {
+        "id": 156,
+        "nome": "Colaborador 156",
+        "rarity": "common",
+        "url_imagem": "156.svg"
+    },
+    {
+        "id": 157,
+        "nome": "Colaborador 157",
+        "rarity": "common",
+        "url_imagem": "157.svg"
+    },
+    {
+        "id": 158,
+        "nome": "Colaborador 158",
+        "rarity": "common",
+        "url_imagem": "158.svg"
+    },
+    {
+        "id": 159,
+        "nome": "Colaborador 159",
+        "rarity": "common",
+        "url_imagem": "159.svg"
+    },
+    {
+        "id": 160,
+        "nome": "Colaborador 160",
+        "rarity": "common",
+        "url_imagem": "160.svg"
+    },
+    {
+        "id": 161,
+        "nome": "Colaborador 161",
+        "rarity": "common",
+        "url_imagem": "161.svg"
+    },
+    {
+        "id": 162,
+        "nome": "Colaborador 162",
+        "rarity": "rare",
+        "url_imagem": "162.svg"
+    },
+    {
+        "id": 163,
+        "nome": "Colaborador 163",
+        "rarity": "rare",
+        "url_imagem": "163.svg"
+    },
+    {
+        "id": 164,
+        "nome": "Colaborador 164",
+        "rarity": "rare",
+        "url_imagem": "164.svg"
+    },
+    {
+        "id": 165,
+        "nome": "Colaborador 165",
+        "rarity": "common",
+        "url_imagem": "165.svg"
+    },
+    {
+        "id": 166,
+        "nome": "Colaborador 166",
+        "rarity": "common",
+        "url_imagem": "166.svg"
+    },
+    {
+        "id": 167,
+        "nome": "Colaborador 167",
+        "rarity": "common",
+        "url_imagem": "167.svg"
+    },
+    {
+        "id": 168,
+        "nome": "Colaborador 168",
+        "rarity": "common",
+        "url_imagem": "168.svg"
+    },
+    {
+        "id": 169,
+        "nome": "Colaborador 169",
+        "rarity": "common",
+        "url_imagem": "169.svg"
+    },
+    {
+        "id": 170,
+        "nome": "Colaborador 170",
+        "rarity": "common",
+        "url_imagem": "170.svg"
+    },
+    {
+        "id": 171,
+        "nome": "Colaborador 171",
+        "rarity": "common",
+        "url_imagem": "171.svg"
+    },
+    {
+        "id": 172,
+        "nome": "Colaborador 172",
+        "rarity": "rare",
+        "url_imagem": "172.svg"
+    },
+    {
+        "id": 173,
+        "nome": "Colaborador 173",
+        "rarity": "rare",
+        "url_imagem": "173.svg"
+    },
+    {
+        "id": 174,
+        "nome": "Colaborador 174",
+        "rarity": "rare",
+        "url_imagem": "174.svg"
+    },
+    {
+        "id": 175,
+        "nome": "Colaborador 175",
+        "rarity": "common",
+        "url_imagem": "175.svg"
+    },
+    {
+        "id": 176,
+        "nome": "Colaborador 176",
+        "rarity": "common",
+        "url_imagem": "176.svg"
+    },
+    {
+        "id": 177,
+        "nome": "Colaborador 177",
+        "rarity": "common",
+        "url_imagem": "177.svg"
+    },
+    {
+        "id": 178,
+        "nome": "Colaborador 178",
+        "rarity": "common",
+        "url_imagem": "178.svg"
+    },
+    {
+        "id": 179,
+        "nome": "Colaborador 179",
+        "rarity": "common",
+        "url_imagem": "179.svg"
+    },
+    {
+        "id": 180,
+        "nome": "Colaborador 180",
+        "rarity": "common",
+        "url_imagem": "180.svg"
+    },
+    {
+        "id": 181,
+        "nome": "Colaborador 181",
+        "rarity": "common",
+        "url_imagem": "181.svg"
+    },
+    {
+        "id": 182,
+        "nome": "Colaborador 182",
+        "rarity": "rare",
+        "url_imagem": "182.svg"
+    },
+    {
+        "id": 183,
+        "nome": "Colaborador 183",
+        "rarity": "rare",
+        "url_imagem": "183.svg"
+    },
+    {
+        "id": 184,
+        "nome": "Colaborador 184",
+        "rarity": "rare",
+        "url_imagem": "184.svg"
+    },
+    {
+        "id": 185,
+        "nome": "Colaborador 185",
+        "rarity": "common",
+        "url_imagem": "185.svg"
+    },
+    {
+        "id": 186,
+        "nome": "Colaborador 186",
+        "rarity": "common",
+        "url_imagem": "186.svg"
+    },
+    {
+        "id": 187,
+        "nome": "Colaborador 187",
+        "rarity": "common",
+        "url_imagem": "187.svg"
+    },
+    {
+        "id": 188,
+        "nome": "Colaborador 188",
+        "rarity": "common",
+        "url_imagem": "188.svg"
+    },
+    {
+        "id": 189,
+        "nome": "Colaborador 189",
+        "rarity": "common",
+        "url_imagem": "189.svg"
+    },
+    {
+        "id": 190,
+        "nome": "Colaborador 190",
+        "rarity": "common",
+        "url_imagem": "190.svg"
+    },
+    {
+        "id": 191,
+        "nome": "Colaborador 191",
+        "rarity": "common",
+        "url_imagem": "191.svg"
+    },
+    {
+        "id": 192,
+        "nome": "Colaborador 192",
+        "rarity": "rare",
+        "url_imagem": "192.svg"
+    },
+    {
+        "id": 193,
+        "nome": "Colaborador 193",
+        "rarity": "rare",
+        "url_imagem": "193.svg"
+    },
+    {
+        "id": 194,
+        "nome": "Colaborador 194",
+        "rarity": "rare",
+        "url_imagem": "194.svg"
+    },
+    {
+        "id": 195,
+        "nome": "Colaborador 195",
+        "rarity": "common",
+        "url_imagem": "195.svg"
+    },
+    {
+        "id": 196,
+        "nome": "Colaborador 196",
+        "rarity": "common",
+        "url_imagem": "196.svg"
+    },
+    {
+        "id": 197,
+        "nome": "Colaborador 197",
+        "rarity": "common",
+        "url_imagem": "197.svg"
+    },
+    {
+        "id": 198,
+        "nome": "Colaborador 198",
+        "rarity": "common",
+        "url_imagem": "198.svg"
+    },
+    {
+        "id": 199,
+        "nome": "Colaborador 199",
+        "rarity": "common",
+        "url_imagem": "199.svg"
+    },
+    {
+        "id": 200,
+        "nome": "Colaborador 200",
+        "rarity": "common",
+        "url_imagem": "200.svg"
+    },
+    {
+        "id": 201,
+        "nome": "Colaborador 201",
+        "rarity": "common",
+        "url_imagem": "201.svg"
+    },
+    {
+        "id": 202,
+        "nome": "Colaborador 202",
+        "rarity": "rare",
+        "url_imagem": "202.svg"
+    },
+    {
+        "id": 203,
+        "nome": "Colaborador 203",
+        "rarity": "rare",
+        "url_imagem": "203.svg"
+    },
+    {
+        "id": 204,
+        "nome": "Colaborador 204",
+        "rarity": "rare",
+        "url_imagem": "204.svg"
+    },
+    {
+        "id": 205,
+        "nome": "Colaborador 205",
+        "rarity": "rare",
+        "url_imagem": "205 .svg"
+    },
+    {
+        "id": 205,
+        "nome": "Colaborador 205",
+        "rarity": "rare",
+        "url_imagem": "205.svg"
+    },
+    {
+        "id": 206,
+        "nome": "Colaborador 206",
+        "rarity": "common",
+        "url_imagem": "206.svg"
+    },
+    {
+        "id": 207,
+        "nome": "Colaborador 207",
+        "rarity": "common",
+        "url_imagem": "207.svg"
+    },
+    {
+        "id": 208,
+        "nome": "Colaborador 208",
+        "rarity": "common",
+        "url_imagem": "208.svg"
+    },
+    {
+        "id": 209,
+        "nome": "Colaborador 209",
+        "rarity": "common",
+        "url_imagem": "209.svg"
+    },
+    {
+        "id": 210,
+        "nome": "Colaborador 210",
+        "rarity": "common",
+        "url_imagem": "210.svg"
+    },
+    {
+        "id": 211,
+        "nome": "Colaborador 211",
+        "rarity": "common",
+        "url_imagem": "211.svg"
+    },
+    {
+        "id": 212,
+        "nome": "Colaborador 212",
+        "rarity": "rare",
+        "url_imagem": "212.svg"
+    },
+    {
+        "id": 213,
+        "nome": "Colaborador 213",
+        "rarity": "rare",
+        "url_imagem": "213.svg"
+    },
+    {
+        "id": 214,
+        "nome": "Colaborador 214",
+        "rarity": "rare",
+        "url_imagem": "214.svg"
+    },
+    {
+        "id": 215,
+        "nome": "Colaborador 215",
+        "rarity": "common",
+        "url_imagem": "215.svg"
+    },
+    {
+        "id": 216,
+        "nome": "Colaborador 216",
+        "rarity": "common",
+        "url_imagem": "216.svg"
+    },
+    {
+        "id": 217,
+        "nome": "Colaborador 217",
+        "rarity": "common",
+        "url_imagem": "217.svg"
+    },
+    {
+        "id": 218,
+        "nome": "Colaborador 218",
+        "rarity": "common",
+        "url_imagem": "218.svg"
+    },
+    {
+        "id": 219,
+        "nome": "Colaborador 219",
+        "rarity": "common",
+        "url_imagem": "219.svg"
+    },
+    {
+        "id": 220,
+        "nome": "Colaborador 220",
+        "rarity": "common",
+        "url_imagem": "220.svg"
+    },
+    {
+        "id": 221,
+        "nome": "Colaborador 221",
+        "rarity": "common",
+        "url_imagem": "221.svg"
+    },
+    {
+        "id": 222,
+        "nome": "Colaborador 222",
+        "rarity": "rare",
+        "url_imagem": "222.svg"
+    },
+    {
+        "id": 223,
+        "nome": "Colaborador 223",
+        "rarity": "rare",
+        "url_imagem": "223.svg"
+    },
+    {
+        "id": 224,
+        "nome": "Colaborador 224",
+        "rarity": "common",
+        "url_imagem": "224.svg"
+    },
+    {
+        "id": 225,
+        "nome": "Colaborador 225",
+        "rarity": "common",
+        "url_imagem": "225.svg"
+    },
+    {
+        "id": 226,
+        "nome": "Colaborador 226",
+        "rarity": "common",
+        "url_imagem": "226.svg"
+    },
+    {
+        "id": 227,
+        "nome": "Colaborador 227",
+        "rarity": "rare",
+        "url_imagem": "227.svg"
+    },
+    {
+        "id": 228,
+        "nome": "Colaborador 228",
+        "rarity": "rare",
+        "url_imagem": "228.svg"
+    },
+    {
+        "id": 229,
+        "nome": "Colaborador 229",
+        "rarity": "common",
+        "url_imagem": "229.svg"
+    },
+    {
+        "id": 230,
+        "nome": "Colaborador 230",
+        "rarity": "common",
+        "url_imagem": "230.svg"
+    },
+    {
+        "id": 231,
+        "nome": "Colaborador 231",
+        "rarity": "common",
+        "url_imagem": "231.svg"
+    },
+    {
+        "id": 232,
+        "nome": "Colaborador 232",
+        "rarity": "rare",
+        "url_imagem": "232.svg"
+    },
+    {
+        "id": 233,
+        "nome": "Colaborador 233",
+        "rarity": "rare",
+        "url_imagem": "233.svg"
+    },
+    {
+        "id": 234,
+        "nome": "Colaborador 234",
+        "rarity": "common",
+        "url_imagem": "234.svg"
+    },
+    {
+        "id": 235,
+        "nome": "Colaborador 235",
+        "rarity": "common",
+        "url_imagem": "235.svg"
+    },
+    {
+        "id": 236,
+        "nome": "Colaborador 236",
+        "rarity": "common",
+        "url_imagem": "236.svg"
+    },
+    {
+        "id": 237,
+        "nome": "Colaborador 237",
+        "rarity": "common",
+        "url_imagem": "237.svg"
+    },
+    {
+        "id": 238,
+        "nome": "Colaborador 238",
+        "rarity": "common",
+        "url_imagem": "238.svg"
+    },
+    {
+        "id": 239,
+        "nome": "Colaborador 239",
+        "rarity": "common",
+        "url_imagem": "239.svg"
+    },
+    {
+        "id": 240,
+        "nome": "Colaborador 240",
+        "rarity": "common",
+        "url_imagem": "240.svg"
+    },
+    {
+        "id": 241,
+        "nome": "Colaborador 241",
+        "rarity": "common",
+        "url_imagem": "241.svg"
+    },
+    {
+        "id": 242,
+        "nome": "Colaborador 242",
+        "rarity": "rare",
+        "url_imagem": "242.svg"
+    },
+    {
+        "id": 243,
+        "nome": "Colaborador 243",
+        "rarity": "rare",
+        "url_imagem": "243.svg"
+    },
+    {
+        "id": 244,
+        "nome": "Colaborador 244",
+        "rarity": "common",
+        "url_imagem": "244.svg"
+    },
+    {
+        "id": 245,
+        "nome": "Colaborador 245",
+        "rarity": "common",
+        "url_imagem": "245.svg"
+    },
+    {
+        "id": 246,
+        "nome": "Colaborador 246",
+        "rarity": "common",
+        "url_imagem": "246.svg"
+    },
+    {
+        "id": 247,
+        "nome": "Colaborador 247",
+        "rarity": "common",
+        "url_imagem": "247.svg"
+    },
+    {
+        "id": 248,
+        "nome": "Colaborador 248",
+        "rarity": "common",
+        "url_imagem": "248.svg"
+    },
+    {
+        "id": 249,
+        "nome": "Colaborador 249",
+        "rarity": "common",
+        "url_imagem": "249.svg"
+    },
+    {
+        "id": 250,
+        "nome": "Colaborador 250",
+        "rarity": "common",
+        "url_imagem": "250.svg"
+    },
+    {
+        "id": 251,
+        "nome": "Colaborador 251",
+        "rarity": "common",
+        "url_imagem": "251.svg"
+    },
+    {
+        "id": 252,
+        "nome": "Colaborador 252",
+        "rarity": "common",
+        "url_imagem": "252.svg"
+    },
+    {
+        "id": 253,
+        "nome": "Colaborador 253",
+        "rarity": "common",
+        "url_imagem": "253.svg"
+    },
+    {
+        "id": 254,
+        "nome": "Colaborador 254",
+        "rarity": "common",
+        "url_imagem": "254.svg"
+    },
+    {
+        "id": 255,
+        "nome": "Colaborador 255",
+        "rarity": "common",
+        "url_imagem": "255.svg"
+    },
+    {
+        "id": 256,
+        "nome": "Colaborador 256",
+        "rarity": "rare",
+        "url_imagem": "256.svg"
+    },
+    {
+        "id": 257,
+        "nome": "Colaborador 257",
+        "rarity": "rare",
+        "url_imagem": "257.svg"
+    },
+    {
+        "id": 258,
+        "nome": "Colaborador 258",
+        "rarity": "rare",
+        "url_imagem": "258.svg"
+    },
+    {
+        "id": 259,
+        "nome": "Colaborador 259",
+        "rarity": "common",
+        "url_imagem": "259.svg"
+    },
+    {
+        "id": 260,
+        "nome": "Colaborador 260",
+        "rarity": "common",
+        "url_imagem": "260.svg"
+    },
+    {
+        "id": 261,
+        "nome": "Colaborador 261",
+        "rarity": "common",
+        "url_imagem": "261.svg"
+    },
+    {
+        "id": 262,
+        "nome": "Colaborador 262",
+        "rarity": "common",
+        "url_imagem": "262.svg"
+    },
+    {
+        "id": 263,
+        "nome": "Colaborador 263",
+        "rarity": "common",
+        "url_imagem": "263.svg"
+    },
+    {
+        "id": 264,
+        "nome": "Colaborador 264",
+        "rarity": "common",
+        "url_imagem": "264.svg"
+    },
+    {
+        "id": 265,
+        "nome": "Colaborador 265",
+        "rarity": "common",
+        "url_imagem": "265.svg"
+    },
+    {
+        "id": 266,
+        "nome": "Colaborador 266",
+        "rarity": "rare",
+        "url_imagem": "266.svg"
+    },
+    {
+        "id": 267,
+        "nome": "Colaborador 267",
+        "rarity": "common",
+        "url_imagem": "267.svg"
+    },
+    {
+        "id": 268,
+        "nome": "Colaborador 268",
+        "rarity": "common",
+        "url_imagem": "268.svg"
+    },
+    {
+        "id": 269,
+        "nome": "Colaborador 269",
+        "rarity": "common",
+        "url_imagem": "269.svg"
+    },
+    {
+        "id": 270,
+        "nome": "Colaborador 270",
+        "rarity": "common",
+        "url_imagem": "270.svg"
+    },
+    {
+        "id": 271,
+        "nome": "Colaborador 271",
+        "rarity": "common",
+        "url_imagem": "271.svg"
+    },
+    {
+        "id": 272,
+        "nome": "Colaborador 272",
+        "rarity": "common",
+        "url_imagem": "272.svg"
+    },
+    {
+        "id": 273,
+        "nome": "Colaborador 273",
+        "rarity": "common",
+        "url_imagem": "273.svg"
+    },
+    {
+        "id": 274,
+        "nome": "Colaborador 274",
+        "rarity": "common",
+        "url_imagem": "274.svg"
+    },
+    {
+        "id": 275,
+        "nome": "Colaborador 275",
+        "rarity": "common",
+        "url_imagem": "275.svg"
+    },
+    {
+        "id": 276,
+        "nome": "Colaborador 276",
+        "rarity": "common",
+        "url_imagem": "276.svg"
+    },
+    {
+        "id": 277,
+        "nome": "Colaborador 277",
+        "rarity": "common",
+        "url_imagem": "277.svg"
+    },
+    {
+        "id": 278,
+        "nome": "Colaborador 278",
+        "rarity": "common",
+        "url_imagem": "278.svg"
+    },
+    {
+        "id": 279,
+        "nome": "Colaborador 279",
+        "rarity": "common",
+        "url_imagem": "279.svg"
+    },
+    {
+        "id": 280,
+        "nome": "Colaborador 280",
+        "rarity": "common",
+        "url_imagem": "280.svg"
+    },
+    {
+        "id": 281,
+        "nome": "Colaborador 281",
+        "rarity": "common",
+        "url_imagem": "281.svg"
+    },
+    {
+        "id": 282,
+        "nome": "Colaborador 282",
+        "rarity": "common",
+        "url_imagem": "282.svg"
+    },
+    {
+        "id": 283,
+        "nome": "Colaborador 283",
+        "rarity": "common",
+        "url_imagem": "283.svg"
+    }
+]

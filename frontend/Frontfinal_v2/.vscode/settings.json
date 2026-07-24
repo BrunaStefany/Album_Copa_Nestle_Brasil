@@ -1,0 +1,5 @@
+{
+    "liveServer.settings.port": 5503,
+    "appService.defaultWebAppToDeploy": "/subscriptions/2d5b1d98-55e7-4ea9-a6ff-2dc2cf9b047f/resourceGroups/nbra-pr-albumcopa26-engineer-usea-rgp/providers/Microsoft.Web/sites/nbra-pr-albumcopa26-brso-app",
+    "appService.deploySubpath": "."
+}
