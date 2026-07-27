@@ -74,6 +74,5 @@ O foco principal do desenvolvimento foi a construção de um back-end robusto e 
 4. Inicie o servidor:
    `[comando para rodar, ex: npm start ou uvicorn main:app --reload]`
 
-
----
+**Site**:https://nbra-pr-albumcopa26-brso-app-g7dtcraubfh3cyfk.eastus-01.azurewebsites.net/#
 **Desenvolvido por [Bruna Stefany](https://github.com/BrunaStefany) - Software Engineer**
